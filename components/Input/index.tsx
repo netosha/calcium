@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, MotionProps } from 'framer-motion';
 import cn from 'classnames';
-import styles from './Input.module.css';
+import styles from './Input.module.scss';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   disabled: boolean;
