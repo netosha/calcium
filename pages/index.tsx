@@ -24,12 +24,21 @@ export default function Home() {
           placeholder="Стелишь триплетам? Легко (о)"
           style={{ marginBottom: 20, width: 400 }}
         />
-        <Checkbox
-          style={{width: 40, height: 40}}
-          onClick={(e) => setChecked(!checked)}
-          checked
-          ref={ref}
-        />
+        <div style={{ display: 'flex' }}>
+          <div style={{ marginRight: 40 }}>
+            <a>big one</a>
+            <Checkbox
+              style={{ width: 40, height: 40 }}
+              onClick={(e) => setChecked(!checked)}
+              checked
+              ref={ref}
+            />
+          </div>
+          <div>
+            <a>normal size</a>
+            <Checkbox onClick={(e) => setChecked(!checked)} checked ref={ref} />
+          </div>
+        </div>
       </main>
     </div>
   );
