@@ -21,8 +21,8 @@ export default function Home() {
           Test
         </Button>
         <Input
-          placeholder="Стелишь триплетам? Легко (о)"
-          style={{ marginBottom: 20, width: 400 }}
+          placeholder="Стелишь триплетам?"
+          style={{ marginBottom: 20 }}
         />
         <div style={{ display: 'flex' }}>
           <div style={{ marginRight: 40 }}>
