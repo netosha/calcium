@@ -8,7 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   rounded: boolean;
 }
 
-// Predefined motion constatns
+// TODO: Adopt to number type
 
 export default React.forwardRef(
   (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLInputElement>) => {
@@ -17,7 +17,6 @@ export default React.forwardRef(
       <>
         <motion.input
           ref={ref}
-          type="tel"
           className={cn(styles.input, className, {
             [styles.disabled]: props.disabled,
             [styles.rounded]: props.rounded,
@@ -26,7 +25,6 @@ export default React.forwardRef(
         >
           {children}
         </motion.input>
-        <div className={styles.test}>123</div>
       </>
     );
   },
