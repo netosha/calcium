@@ -9,6 +9,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 // TODO: Adopt to number type
+// TODO: Check box-shadow in safari ios
 
 export default React.forwardRef(
   (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLInputElement>) => {

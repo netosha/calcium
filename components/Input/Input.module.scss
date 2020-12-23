@@ -16,6 +16,7 @@
   background: $control;
 
   transition: 0.2s;
+
   &:focus-within{
     box-shadow: inset 0 0 0 1px $azure;
   }
@@ -25,10 +26,6 @@
   //  z-index: 1;
   //}
 }
-
-.input[type="number"]{
-}
-
 .disabled{
   color: $text;
   background: $disabled;
