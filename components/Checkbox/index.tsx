@@ -6,21 +6,26 @@ import styles from './Checkbox.module.scss';
 interface Props extends React.InputHTMLAttributes<HTMLDivElement> {
   disabled: boolean;
   checked: boolean;
-
-  /*
-  You can pass values directly to path element (motion props included)
-  @example
-  jsx```
-  pathProps={{
-          strokeLinecap: 'square',
-        }}
-  ```
-  pathProps={{
-          transition: { type: 'spring', stiffness: 900, damping: 50 },
-        }}
-  ```
-   */
   pathProps: React.SVGAttributes<HTMLOrSVGElement> & MotionProps;
+  /**
+   * You can pass values directly to path element (motion props included)
+   * @example
+   * jsx```
+   *  <Checkbox
+   *    pathProps={{
+   *          strokeLinecap: 'square',
+   *       }}
+   *   />
+   *  ```
+   *
+   *  jsx```
+   *  <Checkbox
+   *    pathProps={{
+   *         transition: { type: 'spring', stiffness: 900, damping: 50 },
+   *        }}
+   *   />
+   * ```
+   */
 }
 
 // Predefined motion constatns

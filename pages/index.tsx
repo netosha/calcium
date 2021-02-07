@@ -1,45 +1,51 @@
 import React from 'react';
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Button, Checkbox, Input } from '../components';
+import { Button, Checkbox, Input, Modal } from '../components';
 
 export default function Home() {
-  const ref = React.useRef<null | React.ElementRef<'input'>>(null);
+  const ref = React.useRef<null | React.ElementRef<'div'>>(null);
   const [checked, setChecked] = React.useState<boolean>(true);
-  React.useEffect(() => {
-    console.log(ref.current?.checked);
-  }, [ref.current]);
+  const [isModalVisible, setModalVisible] = React.useState<boolean>(false);
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <Button
-          onClick={(e) => {
-            console.log(ref.current.checked);
-          }}
-          style={{ marginBottom: 20 }}
-        >
-          Test
-        </Button>
-        <Input
-          placeholder="Стелишь триплетам?"
-          style={{ marginBottom: 20 }}
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
-        <div style={{ display: 'flex' }}>
-          <div style={{ marginRight: 40 }}>
-            <a>big one</a>
-            <Checkbox
-              style={{ width: 40, height: 40 }}
-              onClick={(e) => setChecked(!checked)}
-              checked
-              ref={ref}
-            />
-          </div>
+      </Head>
+      <div className={styles.container}>
+        <main className={styles.main}>
           <div>
-            <a>normal size</a>
-            <Checkbox onClick={(e) => setChecked(!checked)} checked ref={ref} />
+            <Button>Test</Button>
           </div>
-        </div>
-      </main>
-    </div>
+          <Input placeholder="Стелишь триплетам?" />
+          <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: 40 }}>
+              <Checkbox
+                style={{ width: 40, height: 40 }}
+                onClick={(e) => setChecked(!checked)}
+                checked
+                ref={ref}
+              />
+            </div>
+            <div>
+              <Checkbox />
+            </div>
+          </div>
+          <Button onClick={() => setModalVisible(true)}>toggle modal</Button>
+          <Modal
+            isOpen={isModalVisible}
+            onClose={() => setModalVisible(false)}
+            title="Test text"
+            style={{ maxWidth: 600 }}
+          >
+            lox
+          </Modal>
+        </main>
+      </div>
+    </>
   );
 }
