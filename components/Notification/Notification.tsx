@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, MotionProps, useDragControls } from 'framer-motion';
 import cn from 'classnames';
 import styles from './Notification.module.scss';
-import { NotificationProps } from './types';
+import { Props } from './types';
 
 // Predefined motion constatns
 export const closeVariants = {
@@ -10,8 +10,7 @@ export const closeVariants = {
 };
 
 export default function Notification(
-  props: NotificationProps & {
-    id?: string;
+  props: Props & {
     children?: React.ReactNode;
   } & MotionProps = {},
 ) {
@@ -21,16 +20,31 @@ export default function Notification(
     dragControls.start(event, { snapToCursor: true });
   }
 
-  const { id, children, onClose, className, ...rest } = props;
+  const {
+    children,
+    onClose,
+    className,
+    closable = true,
+    type = 'regular',
+    ...rest
+  } = props;
+  console.log(children);
   return (
     <motion.li
-      key={id}
-      className={cn(styles.notification, className)}
+      className={cn(
+        styles.notification,
+        {
+          [styles.success]: type === 'success',
+          [styles.error]: type === 'error',
+        },
+        className,
+      )}
       {...rest}
     >
-      {id}
-      {onClose && (
+      {children}
+      {onClose && closable && (
         <motion.svg
+          onClick={onClose}
           className={styles.close}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

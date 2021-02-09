@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNotifications } from '../components/Notification/useNotifications';
+import { useNotifications } from '../components';
 
 export default function Test() {
   const { sendNotification, notifications } = useNotifications();
   console.log(notifications);
   return (
     <div>
-      <button onClick={() => sendNotification(<a>lox</a>)}>
+      <button onClick={() => sendNotification(<div>lox</div>)}>
         from second page - {notifications.length}
       </button>
     </div>
