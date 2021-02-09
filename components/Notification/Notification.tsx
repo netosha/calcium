@@ -11,7 +11,6 @@ export const closeVariants = {
 
 export default function Notification(
   props: NotificationProps & {
-    id?: string;
     children?: React.ReactNode;
   } & MotionProps = {},
 ) {
@@ -28,7 +27,7 @@ export default function Notification(
       className={cn(styles.notification, className)}
       {...rest}
     >
-      {id}
+      {children}
       {onClose && (
         <motion.svg
           className={styles.close}
