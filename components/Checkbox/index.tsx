@@ -1,39 +1,16 @@
 import React from 'react';
 import { motion, MotionProps, Transition, Variants } from 'framer-motion';
 import cn from 'classnames';
+import { Props } from './types';
 import styles from './Checkbox.module.scss';
 
-interface Props extends React.InputHTMLAttributes<HTMLDivElement> {
-  disabled: boolean;
-  checked: boolean;
-  pathProps: React.SVGAttributes<HTMLOrSVGElement> & MotionProps;
-  /**
-   * You can pass values directly to path element (motion props included)
-   * @example
-   * jsx```
-   *  <Checkbox
-   *    pathProps={{
-   *          strokeLinecap: 'square',
-   *       }}
-   *   />
-   *  ```
-   *
-   *  jsx```
-   *  <Checkbox
-   *    pathProps={{
-   *         transition: { type: 'spring', stiffness: 900, damping: 50 },
-   *        }}
-   *   />
-   * ```
-   */
-}
-
 // Predefined motion constatns
-const animationVariants: Variants = {
+export const animationVariants: Variants = {
   checked: { strokeDashoffset: 0 },
   hidden: { strokeDashoffset: 8.5 },
 };
-const animationTransition: Transition = {
+
+export const animationTransition: Transition = {
   type: 'spring',
   stiffness: 900,
   damping: 60,

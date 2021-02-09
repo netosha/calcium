@@ -1,12 +1,8 @@
 import React from 'react';
 import { motion, MotionProps } from 'framer-motion';
 import cn from 'classnames';
+import { Props } from './types';
 import styles from './Input.module.scss';
-
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  disabled: boolean;
-  rounded: boolean;
-}
 
 // TODO: Adopt to number type
 // TODO: Check box-shadow in safari ios

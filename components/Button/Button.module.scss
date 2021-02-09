@@ -7,7 +7,7 @@
 
   cursor: pointer;
 
-  // Disable nasty "blinking" in safari browser
+   //Disable nasty "blinking" in safari browser
   -webkit-backface-visibility:  hidden;
   -webkit-tap-highlight-color:  transparent;
 
@@ -16,6 +16,10 @@
   border-radius: 8px;
   color: white;
   background: $azure;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .disabled{

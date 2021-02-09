@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence, MotionProps } from 'framer-motion';
+import { Props } from './types';
 import styles from './Modal.module.scss';
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  isOpen: boolean;
-  onClose: (event: React.MouseEvent<SVGElement>) => void;
-  onOutsideClick: (event: React.MouseEvent<HTMLDivElement>) => void;
-}
-
+// Predefined motion constatns
 export const closeVariants = {
   pressed: { scale: 0.9 },
 };
@@ -77,7 +72,7 @@ export default React.forwardRef(
               >
                 <motion.svg
                   onClick={onClose}
-                  className={styles.x}
+                  className={styles.close}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   whileTap="pressed"
