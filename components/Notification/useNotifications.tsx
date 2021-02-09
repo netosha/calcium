@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence, MotionProps } from 'framer-motion';
+import cn from 'classnames';
 import styles from './Notification.module.scss';
-import { NotificationProps } from './types';
+import { Props } from './types';
 import Notification from './Notification';
 
 // https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8
@@ -19,7 +20,7 @@ let listeners = [];
 let notifications: {
   id: number;
   children: React.ReactNode;
-  notificationProps?: NotificationProps & MotionProps;
+  notificationProps?: Props & MotionProps;
 }[] = [];
 
 const setNotifications = (newState) => {
@@ -43,7 +44,7 @@ export default function useNotifications() {
   const sendNotification = (
     children: React.ReactNode,
     durationMs = 2500,
-    notificationProps: NotificationProps & MotionProps = {},
+    notificationProps: Props & MotionProps = {},
   ) => {
     const id = Date.now();
     setNotifications([...notifications, { id, children, notificationProps }]);
@@ -71,14 +72,16 @@ export default function useNotifications() {
       <motion.div className={styles.container}>
         <AnimatePresence initial={false}>
           {notifications.map((x) => {
+            const { className, closable = true } = x.notificationProps;
             return (
               <Notification
                 key={x.id}
                 layout
                 drag="x"
                 dragElastic={0.2}
-                className={styles.notification}
-                onDragEnd={() => removeNotification(x.id)}
+                className={cn(styles.notification, className)}
+                onDragEnd={closable ? () => removeNotification(x.id) : null}
+                onClose={() => removeNotification(x.id)}
                 dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
                 initial={{ opacity: 0, y: 50, scale: 0.3 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}

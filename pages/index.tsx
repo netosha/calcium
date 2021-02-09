@@ -1,78 +1,94 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import {
-  Button,
-  Checkbox,
-  Input,
-  Notification,
-  useNotifications,
-} from '../components';
+import { motion } from 'framer-motion';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { Checkbox } from '../components';
 
-const First = () => {
-  // const { sendNotification, notifications, test, setTest } = useNotifications()
-  // const [status, setStatus] = useCustomHook();
-
-  const { sendNotification, notifications } = useNotifications();
-  return (
-    <Button onClick={() => sendNotification(`first ${Math.random()}`)}>
-      first - {notifications.length}
-      rendered at {new Date().toLocaleTimeString()}
-    </Button>
-  );
+const variants = {
+  hovered: { scale: 1.07 },
 };
 
-const Second = () => {
-  const { sendNotification, notifications } = useNotifications();
-
+const Card = ({ children, href, ...rest }) => {
   return (
-    <Button onClick={() => sendNotification(`second ${Math.random()}`)}>
-      second - {notifications.length}
-      rendered at {new Date().toLocaleTimeString()}
-    </Button>
+    <motion.div layout className={styles.card} whileHover="hovered" {...rest}>
+      <motion.div variants={variants}>
+        <Link href={href}>{children}</Link>
+      </motion.div>
+    </motion.div>
   );
 };
 
 export default function Home() {
-  // https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8
-  const {
-    sendNotification,
-    notifications,
-    removeNotification,
-  } = useNotifications();
-  // const [status, setStatus] = useCustomHook();
-  const [text, setText] = React.useState<string>('');
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
-        <Button
-          onClick={() =>
-            sendNotification(
-              'test text dawadwjkadwjk dawjkajbdw bjkhadw bjkhadw bjhad bad bh bhjdawbhwd bhjdw bhdwabjahdba bhjadw ad bad bhjajbha dbhja dbhja ',
-              -1,
-              {
-                style: { background: 'red' },
-              },
-            )
-          }
-        >
-          Global
-        </Button>
-        <First />
-        <Second />
-        global - {notifications.length}
-        rendered at {new Date().toLocaleTimeString()}
-        <Link href={'/test'}>
-          <a> to another page</a>
-        </Link>
-        <Button onClick={() => console.log(notifications)}>
-          {' '}
-          log notifications
-        </Button>
-        <Notification>lox</Notification>
-        <Button onClick={() => removeNotification(notifications[0].id)}>
-          remove first
-        </Button>
+      <header className={styles.header}>
+        <div className={styles.header_inner}>
+          <Link href="/">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a>{/*<img src="./logo.png" style={{ height: 36 }} />*/}</a>
+          </Link>
+        </div>
+      </header>
+      <main className={styles.hero}>
+        <div className={styles.wrapper}>
+          <Card href="/buttons">
+            <Button>Buttons</Button>
+          </Card>
+          <Card href="/input">
+            <Input placeholder="Inputs" />
+          </Card>
+          <Card href="/checkbox">
+            <Checkbox checked />
+          </Card>
+          <Card href="/checkbox">
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: 150,
+                height: 100,
+                background: 'white',
+                opacity: 0.5,
+                borderRadius: 8,
+              }}
+            >
+              Modal
+            </div>
+          </Card>
+          <Card href="/notifications">
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <div
+                style={{
+                  color: 'white',
+                  padding: '8px 16px',
+                  background: '#0099ff',
+                  borderRadius: 4,
+                }}
+              >
+                Notifications
+              </div>
+              <div
+                style={{
+                  marginTop: 12,
+                  color: 'white',
+                  padding: '8px 16px',
+                  background: '#FF3333',
+                  borderRadius: 4,
+                }}
+              >
+                Notifications
+              </div>
+            </div>
+          </Card>
+        </div>
       </main>
     </div>
   );
