@@ -8,7 +8,7 @@ import styles from './Button.module.scss';
 export const whileTap = { scale: 0.95 };
 
 export default React.forwardRef(
-  (props: Props & MotionProps, ref: React.Ref<HTMLButtonElement>) => {
+  (props: Props, ref: React.Ref<HTMLButtonElement>) => {
     const { children, className, ...rest } = props;
     return (
       <motion.button

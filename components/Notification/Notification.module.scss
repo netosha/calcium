@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .container{
-  position: absolute;
+  position: fixed;
 
   // Needs to show notification's shadows
   padding-right: 16px;
@@ -15,6 +15,7 @@
   display: grid;
   grid-gap: 16px;
   grid-auto-rows: auto;
+  z-index: 9999;
 }
 
 .notification{

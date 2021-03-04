@@ -36,13 +36,13 @@ export default function Home() {
           <Card href="/buttons">
             <Button>Buttons</Button>
           </Card>
-          <Card href="/input">
+          <Card href="/inputs">
             <Input placeholder="Inputs" />
           </Card>
-          <Card href="/checkbox">
+          <Card href="/checkboxes">
             <Checkbox checked />
           </Card>
-          <Card href="/checkbox">
+          <Card href="/checkbo">
             <div
               style={{
                 display: 'flex',

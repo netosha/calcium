@@ -16,6 +16,8 @@ export const animationTransition: Transition = {
   damping: 60,
 };
 
+// Should be refactored in more native way
+
 export default React.forwardRef(
   (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLDivElement>) => {
     const { children, className, onClick, pathProps, ...rest } = props;
@@ -35,32 +37,6 @@ export default React.forwardRef(
       setInitalIsChecked(props.checked);
     }, [props.checked]);
 
-    return (
-      <motion.div
-        ref={ref}
-        className={cn(styles.checkbox, className, {
-          [styles.checked]: initalIsChecked,
-          [styles.disabled]: props.disabled,
-        })}
-        onClick={syntheticClick}
-        {...rest}
-      >
-        <svg viewBox="0 0 12 12" width="100%" height="100%">
-          <motion.path
-            d="M3 6l2 2 4-4"
-            fill="transparent"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeDasharray="8.5"
-            strokeDashoffset="8.5"
-            animate={initalIsChecked ? 'checked' : 'hidden'}
-            variants={animationVariants}
-            transition={animationTransition}
-            {...pathProps}
-          />
-        </svg>
-      </motion.div>
-    );
+    return <input type="checkbox" className={styles.checbox_test} />;
   },
 );

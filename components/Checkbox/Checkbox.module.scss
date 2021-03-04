@@ -21,6 +21,30 @@
   stroke: white;
 }
 
+.checbox_test{
+  // Disable nasty "blinking" in Webkit browser
+  -webkit-backface-visibility:  hidden;
+  -webkit-tap-highlight-color:  transparent;
+
+  // Disable text selection on double click
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  cursor: pointer;
+  border-radius: 25%;
+  width: 20px;
+  height: 20px;
+  background: $control;
+  transition: 0.2s;
+  stroke: white;
+
+  margin: 0!important;
+  border: 0 none;
+}
+
 .checked{
   background: $azure;
   transition: 0.2s;

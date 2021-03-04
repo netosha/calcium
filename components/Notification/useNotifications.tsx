@@ -108,17 +108,3 @@ export default function useNotifications() {
     notifications,
   };
 }
-
-// id={x.id.toString()}
-// layout
-// drag="x"
-// dragElastic={0.2}
-// onDragEnd={() => removeNotification(x.id)}
-// dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-// initial={{ opacity: 0, y: 50, scale: 0.3 }}
-// animate={{ opacity: 1, y: 0, scale: 1 }}
-// exit={{
-//   opacity: 0,
-//     scale: 0.5,
-//     transition: { duration: 0.15 },
-// }}
