@@ -1,10 +1,11 @@
 import React from 'react';
 import { MotionProps } from 'framer-motion';
 
-export interface Props extends React.InputHTMLAttributes<HTMLDivElement> {
-  disabled: boolean;
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLDivElement> {
   checked: boolean;
-  pathProps: React.SVGAttributes<HTMLOrSVGElement> & MotionProps;
+  disabled?: boolean;
+  pathProps?: React.SVGAttributes<HTMLOrSVGElement> & MotionProps;
   /**
    * You can pass values directly to path element (motion props included)
    * @example
@@ -25,3 +26,5 @@ export interface Props extends React.InputHTMLAttributes<HTMLDivElement> {
    * ```
    */
 }
+
+export type Props = CheckboxProps & MotionProps;

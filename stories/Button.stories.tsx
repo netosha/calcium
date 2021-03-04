@@ -8,7 +8,36 @@ import { Props } from '../components/Button/types';
 export default {
   title: 'Components/Button',
   component: Button,
-  argTypes: {},
+  argTypes: {
+    children: {
+      description: 'Inner content of button',
+      table: {},
+    },
+    rounded: {
+      description: 'Makes button with maxium border raduis',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    secondary: {
+      description: `Sets button appearance as secondary`,
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    disabled: {
+      description: `Sets button unable to click`,
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<Props> = (args) => (
@@ -19,4 +48,6 @@ export const Example = Template.bind({});
 Example.args = {
   children: 'Button',
   secondary: false,
+  disabled: false,
+  rounded: false,
 };

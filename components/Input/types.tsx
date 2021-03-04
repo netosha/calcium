@@ -1,6 +1,9 @@
 import React from 'react';
+import { MotionProps } from 'framer-motion/types/motion';
 
-export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  disabled: boolean;
-  rounded: boolean;
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  rounded?: boolean;
+  disabled?: boolean;
 }
+
+export type Props = InputProps & MotionProps;

@@ -22,15 +22,16 @@
   }
 }
 
-.disabled{
-  color: $text;
-  background: $disabled;
-}
-
 .rounded{
   border-radius: 2em;
 }
 
 .secondary{
-  background: #777777;
+  background: $secondary;
 }
+
+.disabled{
+  color: $text;
+  background: $disabled;
+}
+

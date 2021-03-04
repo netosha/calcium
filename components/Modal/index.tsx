@@ -26,7 +26,7 @@ const useClickOutside = (ref: React.RefObject<HTMLDivElement>, onClick) => {
 };
 
 export default React.forwardRef(
-  (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLDivElement>) => {
+  (props: Props, ref: React.Ref<HTMLDivElement>) => {
     // Prevent Server Side Rendering
     // https://github.com/reactjs/react-modal/issues/580
     if (process.browser) {

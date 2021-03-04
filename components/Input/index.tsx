@@ -8,7 +8,7 @@ import styles from './Input.module.scss';
 // TODO: Check box-shadow in safari ios
 
 export default React.forwardRef(
-  (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLInputElement>) => {
+  (props: Props, ref: React.Ref<HTMLInputElement>) => {
     const { children, className, ...rest } = props;
     return (
       <>

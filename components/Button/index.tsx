@@ -17,6 +17,7 @@ export default React.forwardRef(
         className={cn(styles.button, className, {
           [styles.disabled]: props.disabled,
           [styles.rounded]: props.rounded,
+          [styles.secondary]: props.secondary,
         })}
         {...rest}
       >

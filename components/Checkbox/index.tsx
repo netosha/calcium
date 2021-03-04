@@ -16,27 +16,36 @@ export const animationTransition: Transition = {
   damping: 60,
 };
 
-// Should be refactored in more native way
-
 export default React.forwardRef(
-  (props: Partial<Props> & MotionProps, ref: React.Ref<HTMLDivElement>) => {
-    const { children, className, onClick, pathProps, ...rest } = props;
-    const [initalIsChecked, setInitalIsChecked] = React.useState<boolean>(
-      false,
+  (props: Props, ref: React.Ref<HTMLDivElement>) => {
+    const { children, checked, onClick, className, pathProps, ...rest } = props;
+
+    return (
+      <motion.div
+        ref={ref}
+        className={cn(styles.checkbox, className, {
+          [styles.checked]: checked,
+          [styles.disabled]: props.disabled,
+        })}
+        onClick={!props.disabled && onClick}
+        {...rest}
+      >
+        <svg viewBox="0 0 12 12" width="100%" height="100%">
+          <motion.path
+            d="M3 6l2 2 4-4"
+            fill="transparent"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="8.5"
+            strokeDashoffset="8.5"
+            animate={checked ? 'checked' : 'hidden'}
+            variants={animationVariants}
+            transition={animationTransition}
+            {...pathProps}
+          />
+        </svg>
+      </motion.div>
     );
-
-    const syntheticClick = (e) => {
-      // Prevent events on disabled div
-      // Because native div don't support disable attribute
-      if (props.disabled) return;
-      setInitalIsChecked(!initalIsChecked);
-      onClick?.(e);
-    };
-
-    React.useEffect(() => {
-      setInitalIsChecked(props.checked);
-    }, [props.checked]);
-
-    return <input type="checkbox" className={styles.checbox_test} />;
   },
 );
