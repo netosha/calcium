@@ -1,7 +1,10 @@
 {
   "name": "calcium",
+  "description": "Calcium UI library for React",
+  "license": "MIT",
+  "author": "netosha",
   "version": "0.1.0",
-  "private": true,
+  "main": "src/index.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -112,5 +115,13 @@
         }
       ]
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netosha/calcium.git"
+  },
+  "bugs": {
+    "url": "https://github.com/netosha/calcium/issues"
+  },
+  "homepage": "https://github.com/netosha/calcium#readme"
 }

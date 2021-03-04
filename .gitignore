@@ -24,6 +24,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#Idea config files
+.idea
+
 # local env files
 .env.local
 .env.development.local
