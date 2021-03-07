@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import cn from 'classnames';
-import { Props } from './types';
 import styles from './Button.module.scss';
+import { Props } from './types';
 
 // Predefined motion constatns
 export const whileTap = { scale: 0.95 };

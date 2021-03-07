@@ -1,7 +1,8 @@
 import React from 'react';
-import { MotionProps } from 'framer-motion/types/motion';
+import { MotionProps } from 'framer-motion';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   rounded?: boolean;
   secondary?: boolean;

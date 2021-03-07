@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { motion, AnimatePresence, MotionProps } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Props } from './types';
 import styles from './Modal.module.scss';
 

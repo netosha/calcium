@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import cn from 'classnames';
 import { Props } from './types';
 import styles from './Input.module.scss';

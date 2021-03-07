@@ -3,8 +3,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { State, Store } from '@sambego/storybook-state';
 
-import { Checkbox } from '../components';
-import { Props } from '../components/Checkbox/types';
+import { Checkbox } from '../src';
+import { Props } from '../src/components/Checkbox/types';
 
 const store = new Store({
   checked: false,
@@ -44,7 +44,7 @@ const Template: Story<Props> = (args) => (
   <State store={store}>
     <Checkbox
       checked={store.get('checked')}
-      onClick={(e) => store.set({ checked: !store.get('checked') })}
+      onClick={() => store.set({ checked: !store.get('checked') })}
       {...args}
     />
   </State>

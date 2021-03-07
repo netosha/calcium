@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, MotionProps, Transition, Variants } from 'framer-motion';
+import { motion, Transition, Variants } from 'framer-motion';
 import cn from 'classnames';
 import { Props } from './types';
 import styles from './Checkbox.module.scss';

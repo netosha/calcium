@@ -2,6 +2,7 @@
   background-color: rgba(0,0,0,0.5);
   position: fixed;
   height: 100vh;
+  //noinspection CssInvalidPropertyValue
   min-height: -webkit-fill-available;
   width: 100vw;
   align-items: center;
@@ -24,14 +25,12 @@
   flex-grow: 1;
   max-height: 80vh;
   min-height: 72px;
-  max-width: max(50%, 290px);
   border-radius: 15px;
   padding: 16px;
   background-color: #ffffff;
 
   @media(max-width: 560px){
-    max-width: max(50%, 340px);
-    max-height: max(70vh, 400px);
+
   }
 
 }

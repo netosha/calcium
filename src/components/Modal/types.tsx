@@ -1,5 +1,5 @@
 import React from 'react';
-import { MotionProps } from 'framer-motion/dist/framer-motion';
+import { MotionProps } from 'framer-motion';
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
