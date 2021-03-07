@@ -3,7 +3,7 @@
   "description": "Calcium UI library for React",
   "license": "MIT",
   "author": "netosha",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
@@ -18,7 +18,6 @@
     "dev": "npm-run-all --parallel build-watch start-playground"
   },
   "dependencies": {
-    "@types/classnames": "^2.2.11",
     "classnames": "^2.2.6",
     "framer-motion": "^3.7.0",
     "sass": "^1.30.0"
@@ -28,6 +27,7 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@sambego/storybook-state": "^2.0.1",
