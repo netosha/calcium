@@ -9,17 +9,7 @@ export const closeVariants = {
   pressed: { scale: 0.9 },
 };
 
-export default function Notification(
-  props: Props & {
-    children?: React.ReactNode;
-  } & MotionProps = {},
-) {
-  const dragControls = useDragControls();
-
-  function startDrag(event) {
-    dragControls.start(event, { snapToCursor: true });
-  }
-
+export default function Notification(props: Props) {
   const {
     children,
     onClose,
@@ -28,7 +18,7 @@ export default function Notification(
     type = 'regular',
     ...rest
   } = props;
-  console.log(children);
+
   return (
     <motion.li
       className={cn(
