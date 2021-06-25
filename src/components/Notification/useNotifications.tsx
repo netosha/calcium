@@ -44,7 +44,7 @@ export default function useNotifications() {
   const sendNotification = (
     children: React.ReactNode,
     durationMs = 2500,
-    notificationProps: Props & MotionProps = {},
+    notificationProps: Props & MotionProps = { type: 'regular' },
   ) => {
     const id = Date.now();
     setNotifications([...notifications, { id, children, notificationProps }]);

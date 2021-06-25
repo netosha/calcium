@@ -3,7 +3,7 @@
   "description": "Calcium UI library for React",
   "license": "MIT",
   "author": "netosha",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
@@ -23,8 +23,8 @@
     "sass": "^1.30.0"
   },
   "peerDependencies": {
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
