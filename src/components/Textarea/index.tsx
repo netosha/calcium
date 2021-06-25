@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 import { Props } from './types';
-import styles from './Input.module.scss';
+import styles from './Textarea.module.scss';
 
 // TODO: Adopt to number type
 // TODO: Check box-shadow in safari ios
