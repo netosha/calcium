@@ -3,7 +3,7 @@
   "description": "Calcium UI library for React",
   "license": "MIT",
   "author": "netosha",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
