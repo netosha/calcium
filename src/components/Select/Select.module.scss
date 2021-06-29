@@ -5,13 +5,14 @@
   -webkit-appearance: none;
   appearance: none;
 
-  padding:6px 12px;
+  font-size: 16px;
+  padding: 0.5em 1em;
+
   display: flex;
   flex-shrink: 0;
   width: 100%;
   align-items: center;
   position: relative;
-  height: 32px;
   background: $control;
   background-position-y: 50%;
   background-position-x: calc(100% - 16px);
@@ -25,7 +26,6 @@
   &:focus-within{
     box-shadow: inset 0 0 0 1px $azure !important;
   }
-  font-size: 16px;
 
   &::placeholder{
     color:$placeholder;
