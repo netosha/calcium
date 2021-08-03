@@ -16,6 +16,7 @@ export default React.forwardRef(
           ref={ref}
           className={cn(styles.input, className, {
             [styles.disabled]: props.disabled,
+            [styles.error]: props.error,
           })}
           {...rest}
         />

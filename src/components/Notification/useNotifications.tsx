@@ -2,9 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence, MotionProps } from 'framer-motion';
 import cn from 'classnames';
-import styles from './Notification.module.scss';
-import { Props } from './types';
 import Notification from './Notification';
+import { Props } from './types';
+
+import styles from './Notification.module.scss';
+
+// Motion contains
+
+const notificationDragConstraints = { top: 0, left: 0, right: 0, bottom: 0 };
+const notificationInitial = { opacity: 0, y: 50, scale: 0.3 };
+const notificationAnimate = { opacity: 1, y: 0, scale: 1 };
+const notificationExit = {
+  opacity: 0,
+  scale: 0.5,
+  transition: { duration: 0.15 },
+};
 
 // https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8
 // https://github.com/facebook/react/issues/14010
@@ -12,7 +24,7 @@ import Notification from './Notification';
 // It's simpler implementation of use-global-hook library
 // https://github.com/andregardi/use-global-hook#readme
 //
-// It needs to share actual notifiaction state between all hook calls
+// It needs to share actual notification state between all hook calls
 
 // Dispatchers on each hook call
 let listeners = [];
@@ -29,7 +41,10 @@ const setNotifications = (newState) => {
   listeners.forEach((l) => l(notifications));
 };
 
-export default function useNotifications() {
+export default function useNotifications(
+  props: React.HTMLAttributes<HTMLDivElement> & MotionProps = {},
+) {
+  const { className: wrapperClassname } = props;
   const newListener = React.useState()[1];
 
   const removeNotification = (id) => {
@@ -68,8 +83,9 @@ export default function useNotifications() {
       portalRoot.id = 'calcium-notifications-root';
       document.body.appendChild(portalRoot);
     }
+
     ReactDOM.render(
-      <motion.div className={styles.container}>
+      <motion.div className={cn(styles.container, wrapperClassname)} {...props}>
         <AnimatePresence initial={false}>
           {notifications.map((x) => {
             const { className, closable = true } = x.notificationProps;
@@ -82,14 +98,10 @@ export default function useNotifications() {
                 className={cn(styles.notification, className)}
                 onDragEnd={closable ? () => removeNotification(x.id) : null}
                 onClose={() => removeNotification(x.id)}
-                dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-                initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{
-                  opacity: 0,
-                  scale: 0.5,
-                  transition: { duration: 0.15 },
-                }}
+                dragConstraints={notificationDragConstraints}
+                initial={notificationInitial}
+                animate={notificationAnimate}
+                exit={notificationExit}
                 {...x.notificationProps}
               >
                 {x.children}

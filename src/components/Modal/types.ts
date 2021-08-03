@@ -1,11 +1,11 @@
-import React from 'react';
+import { HTMLAttributes, MouseEvent } from 'react';
 import { MotionProps } from 'framer-motion';
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   isOpen: boolean;
-  onClose: (event: React.MouseEvent<SVGElement>) => void;
-  onOutsideClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onClose: (event: MouseEvent<SVGElement>) => void;
+  onOutsideClick?: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
 export type Props = ModalProps & MotionProps;

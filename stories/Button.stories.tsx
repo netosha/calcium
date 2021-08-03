@@ -37,11 +37,21 @@ export default {
         },
       },
     },
+    danger: {
+      description: `Sets button red and super danger to click`,
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
   },
 } as Meta;
 
 const Template: Story<Props> = (args) => (
-  <Button {...args}>{args.children}</Button>
+  <Button onClick={() => alert('lox')} {...args}>
+    {args.children}
+  </Button>
 );
 
 export const Example = Template.bind({});
@@ -50,4 +60,5 @@ Example.args = {
   secondary: false,
   disabled: false,
   rounded: false,
+  danger: false,
 };

@@ -6,6 +6,8 @@ export interface ButtonProps
   disabled?: boolean;
   rounded?: boolean;
   secondary?: boolean;
+  danger?: boolean;
+  success?: boolean;
 }
 
 export type Props = ButtonProps & MotionProps;

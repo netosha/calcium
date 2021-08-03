@@ -3,7 +3,7 @@
   "description": "Calcium UI library for React",
   "license": "MIT",
   "author": "netosha",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
@@ -62,73 +62,6 @@
     "storybook-css-modules-preset": "^1.0.6",
     "typescript": "^4.1.3",
     "typescript-plugin-css-modules": "^3.2.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "always"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/typescript"
-    ],
-    "rules": {
-      "no-use-before-define": "off",
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/*.stories.ts",
-            "**/*.stories.tsx"
-          ]
-        }
-      ],
-      "@typescript-eslint/no-use-before-define": [
-        "error"
-      ],
-      "no-shadow": "off",
-      "@typescript-eslint/no-shadow": [
-        "error"
-      ],
-      "react/jsx-filename-extension": 0,
-      "react/prop-types": 0,
-      "react/require-default-props": 0,
-      "react/destructuring-assignment": 0,
-      "react/jsx-one-expression-per-line": 0,
-      "max-len": [
-        "error",
-        {
-          "code": 120,
-          "ignoreStrings": true,
-          "ignoreComments": true,
-          "ignoreTemplateLiterals": true
-        }
-      ],
-      "implicit-arrow-linebreak": 0,
-      "jsx-a11y/accessible-emoji": 0,
-      "no-unused-vars": 1,
-      "react/jsx-props-no-spreading": 1,
-      "@typescript-eslint/explicit-function-return-type": 0,
-      "@typescript-eslint/no-var-requires": 0,
-      "react/jsx-curly-newline": 0,
-      "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          "js": "never",
-          "jsx": "never",
-          "ts": "never",
-          "tsx": "never"
-        }
-      ]
-    }
   },
   "repository": {
     "type": "git",

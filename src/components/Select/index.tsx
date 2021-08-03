@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
-import styles from './Select.module.scss';
 import { Props } from './types';
+
+import styles from './Select.module.scss';
 
 export default React.forwardRef(
   (props: Props, ref: React.Ref<HTMLSelectElement>) => {

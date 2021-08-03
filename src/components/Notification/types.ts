@@ -1,9 +1,9 @@
-import React from 'react';
+import { MouseEvent, HTMLAttributes } from 'react';
 import { MotionProps } from 'framer-motion';
 
-export interface NotificationProps extends React.HTMLAttributes<HTMLLIElement> {
+export interface NotificationProps extends HTMLAttributes<HTMLLIElement> {
   type: 'regular' | 'success' | 'error';
-  onClose?: (event: React.MouseEvent<SVGElement>) => void;
+  onClose?: (event: MouseEvent<SVGElement>) => void;
   closable?: boolean;
 }
 

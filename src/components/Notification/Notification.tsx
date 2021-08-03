@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion, MotionProps, useDragControls } from 'framer-motion';
 import cn from 'classnames';
-import styles from './Notification.module.scss';
 import { Props } from './types';
+
+import styles from './Notification.module.scss';
 
 // Predefined motion constatns
 export const closeVariants = {

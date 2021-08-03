@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Props } from './types';
+
 import styles from './Modal.module.scss';
 
 // Predefined motion constatns

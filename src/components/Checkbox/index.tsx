@@ -2,9 +2,9 @@ import React from 'react';
 import { motion, Transition, Variants } from 'framer-motion';
 import cn from 'classnames';
 import { Props } from './types';
+
 import styles from './Checkbox.module.scss';
 
-// Predefined motion constatns
 export const animationVariants: Variants = {
   checked: { strokeDashoffset: 0 },
   hidden: { strokeDashoffset: 8.5 },
@@ -28,6 +28,7 @@ export default React.forwardRef(
           [styles.disabled]: props.disabled,
         })}
         onClick={!props.disabled && onClick}
+        type="checkbox"
         {...rest}
       >
         <svg viewBox="0 0 12 12" width="100%" height="100%">

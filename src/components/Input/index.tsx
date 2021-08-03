@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 import { Props } from './types';
+
 import styles from './Input.module.scss';
 
 // TODO: Adopt to number type
@@ -17,6 +18,7 @@ export default React.forwardRef(
           className={cn(styles.input, className, {
             [styles.disabled]: props.disabled,
             [styles.rounded]: props.rounded,
+            [styles.error]: props.error,
           })}
           {...rest}
         >

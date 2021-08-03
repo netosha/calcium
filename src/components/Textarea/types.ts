@@ -4,6 +4,7 @@ import { MotionProps } from 'framer-motion';
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   disabled?: boolean;
+  error?: boolean;
 }
 
 export type Props = TextareaProps & MotionProps;

@@ -1,8 +1,7 @@
-import React from 'react';
+import { HTMLAttributes } from 'react';
 import { MotionProps } from 'framer-motion';
 
-export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
   disabled?: boolean;
 }
 

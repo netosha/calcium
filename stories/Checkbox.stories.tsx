@@ -52,5 +52,6 @@ const Template: Story<Props> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
+  checked: true,
   disabled: false,
 };
