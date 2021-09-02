@@ -1,141 +1,84 @@
 {
   "name": "clcm",
-  "description": "Calcium UI library for React",
-  "license": "MIT",
-  "author": "netosha",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "main": "build/index.js",
-  "module": "build/index.es.js",
+  "module": "build/index.esm.js",
   "files": [
     "build"
   ],
+  "types": "build/index.d.ts",
+  "description": "React component library built on Framer Motion with Typescript",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
     "build": "rollup -c",
-    "build-watch": "rollup -c -w",
-    "start-playground": "cd playground && npm run start",
-    "i-all": "npm i && cd playground && npm i",
-    "dev": "npm-run-all --parallel build-watch start-playground"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "storybook:export": "build-storybook",
+    "generate": "node ./util/create-component",
+    "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "framer-motion": "^3.7.0",
-    "sass": "^1.30.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netosha/calcium.git"
   },
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "Rollup",
+    "Typescript",
+    "Sass",
+    "Storybook"
+  ],
+  "author": "netosha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netosha/calcium/issues"
+  },
+  "homepage": "https://github.com/netosha/calcium#readme",
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "clsx": "^1.1.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "framer-motion": "^4.1.17"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.11",
+    "@babel/core": "^7.15.0",
     "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@sambego/storybook-state": "^2.0.1",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.1.21",
-    "@types/node": "^14.14.14",
-    "@types/react": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@storybook/react": "^6.3.7",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/css-modules": "^1.0.2",
+    "@types/jest": "^24.9.1",
+    "@types/react": "^16.14.14",
+    "@types/react-dom": "^16.9.14",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
     "css-loader": "^5.1.1",
-    "eslint": "^7.16.0",
-    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "node-sass": "^5.0.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.7",
-    "prettier": "2.2.1",
-    "rollup": "^2.40.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.3.2",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "sass-loader": "^10.1.1",
-    "storybook-css-modules-preset": "^1.0.6",
-    "typescript": "^4.1.3",
-    "typescript-plugin-css-modules": "^3.2.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "always"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/typescript"
-    ],
-    "rules": {
-      "no-use-before-define": "off",
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/*.stories.ts",
-            "**/*.stories.tsx"
-          ]
-        }
-      ],
-      "@typescript-eslint/no-use-before-define": [
-        "error"
-      ],
-      "no-shadow": "off",
-      "@typescript-eslint/no-shadow": [
-        "error"
-      ],
-      "react/jsx-filename-extension": 0,
-      "react/prop-types": 0,
-      "react/require-default-props": 0,
-      "react/destructuring-assignment": 0,
-      "react/jsx-one-expression-per-line": 0,
-      "max-len": [
-        "error",
-        {
-          "code": 120,
-          "ignoreStrings": true,
-          "ignoreComments": true,
-          "ignoreTemplateLiterals": true
-        }
-      ],
-      "implicit-arrow-linebreak": 0,
-      "jsx-a11y/accessible-emoji": 0,
-      "no-unused-vars": 1,
-      "react/jsx-props-no-spreading": 1,
-      "@typescript-eslint/explicit-function-return-type": 0,
-      "@typescript-eslint/no-var-requires": 0,
-      "react/jsx-curly-newline": 0,
-      "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          "js": "never",
-          "jsx": "never",
-          "ts": "never",
-          "tsx": "never"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/netosha/calcium.git"
-  },
-  "bugs": {
-    "url": "https://github.com/netosha/calcium/issues"
-  },
-  "homepage": "https://github.com/netosha/calcium#readme"
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "sass-loader": "^10.2.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.4.2"
+  }
 }

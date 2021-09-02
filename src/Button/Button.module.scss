@@ -1,0 +1,49 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.button{
+  // Remove all default styles
+  margin: 0;
+  border: none;
+
+  //Disable nasty "blinking" in safari browser
+  -webkit-backface-visibility:  hidden;
+  -webkit-tap-highlight-color:  transparent;
+
+  background-color: var(--azure);
+  color: var(--white);
+  cursor: pointer;
+
+  font-size: 1rem;
+  padding: 0.35em 1.5em;
+  border-radius: 0.5rem;
+  &:focus{
+    outline: none;
+  }
+}
+
+.rounded{
+  border-radius: 9999px;
+}
+
+.success{
+  background-color: var(--green);
+}
+
+.danger{
+  background-color: var(--red);
+}
+
+.warning{
+  color: var(--black);
+  background-color: var(--yellow);
+}
+
+.secondary{
+  background-color: var(--secondary);
+}
+
+.disabled{
+  cursor: not-allowed;
+  background-color: var(--gray);
+}

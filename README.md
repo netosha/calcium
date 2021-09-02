@@ -1,12 +1,8 @@
-# Calcium 
+#Calcium
 
-[![NPM](https://img.shields.io/npm/v/clcm)](https://www.npmjs.com/package/clcm)
+TBD
 
-Aimated design library for React.
-
-Storybook links will be added soon.
-
-## Usage
+## Installation
 
 ```
 yarn add clcm
@@ -14,7 +10,6 @@ yarn add clcm
 
 <p align="center">or</p>
 
-
 ```
-npm i clcm
+npm install clcm
 ```
