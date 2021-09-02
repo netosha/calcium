@@ -1,0 +1,5 @@
+$font-family: "Inter", Helvetica, Arial, sans-serif;
+
+@mixin font-defaults {
+  font-family: $font-family;
+}

@@ -1,10 +1,44 @@
-$azure: #0099ff;
-$disabled:#d2d2d2;
-$text: #111;
-$control: #f0f0f0;
-$placeholder: $disabled;
-$secondary: #777777;
+:root {
+  --background: #fafafa;
+  --foreground: #ffffff;
+  --secondary: #aaaaaa;
+  --text: #111111;
+  --control: #f0f0f0;
+  --knob: #ffffff;
+  --black: #000000;
+  --gray: #808080;
+  --white: #ffffff;
+  --blue: #0055ff;
+  --azure: #0099ff;
+  --teal: #11dddd;
+  --green: #66BB66;
+  --yellow: #FFCC66;
+  --orange: #ff9900;
+  --red: #ee4444;
+  --violet: #bb00ff;
+  --purple: #6600ff;
+}
 
-$azure: #0099FF;
-$red: #FF3333;
-$green: #02ca5c;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222222;
+    --foreground: #333333;
+    --secondary: #aaaaaa;
+    --text: #ffffff;
+    --control: #4d4d4d;
+    --knob: #ffffff;
+    --black: #000000;
+    --gray: #555555;
+    --white: #ffffff;
+    --blue: #3377ff;
+    //--azure: #44bbff;
+    --azure: #0099ff;
+    --teal: #66eeee;
+    --green: #99cc66;
+    --yellow: #FFCC66;
+    --orange: #ffaa44;
+    --red: #ee4444;
+    --violet: #cc44ff;
+    --purple: #8844ff;
+  }
+}
