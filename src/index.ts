@@ -3,6 +3,7 @@ import Input from './Input';
 import Textarea from './Textarea';
 import Checkbox from './Checkbox';
 import Switch from './Switch';
+import Modal from './Modal';
 import { Notification, useNotifications } from './Notification';
 
 export {
@@ -11,6 +12,7 @@ export {
   Textarea,
   Checkbox,
   Switch,
+  Modal,
   Notification,
   useNotifications,
 };
