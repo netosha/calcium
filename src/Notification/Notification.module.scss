@@ -1,0 +1,73 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.notification{
+  font-family: $font-family;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--azure);
+  color: var(--white);
+  border-radius: 0.5rem;
+}
+
+.container{
+  position: fixed;
+
+  // Needs to show notification's shadows
+  padding-right: 1rem;
+  padding-top: 1rem;
+  top: 0;
+  right: 0;
+
+  max-height: 100vh;
+  max-width: 15rem;
+
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: auto;
+
+  stroke: white;
+  z-index: var(--zNotifications);
+
+}
+
+.closable{
+  position: relative;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+}
+
+.close{
+  //Disable text selection on double click
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--white);
+  cursor: pointer;
+  position: absolute;
+  right: 0.75rem;
+}
+
+.success{
+  background-color: var(--green);
+}
+
+.danger{
+  background-color: var(--red);
+}
+
+.warning{
+  color: var(--black);
+  svg{
+    stroke: var(--black);
+  }
+  background-color: var(--yellow);
+}
+
+.secondary{
+  background-color: var(--secondary);
+}

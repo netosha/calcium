@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { render, within } from '@testing-library/react';
 
-import Checkbox from './Checkbox';
-import { CheckboxProps } from './Checkbox.types';
+import Select from './Select';
+import { SelectProps } from './Select.types';
 
-describe('Input', () => {
-  const renderComponent = ({}: Partial<CheckboxProps>) =>
-    render(<Checkbox checked />);
+describe('Select', () => {
+  const renderComponent = ({}: Partial<SelectProps>) => render(<Select />);
 
   it('should render heading text correctly', () => {
     const headingText = 'Some test heading';

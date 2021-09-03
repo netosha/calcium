@@ -1,4 +1,4 @@
-import { HTMLAttributes, SVGAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { MotionProps } from 'framer-motion';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -7,21 +7,22 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   success?: boolean;
   danger?: boolean;
   warning?: boolean;
-  pathProps?: SVGAttributes<SVGPathElement> & MotionProps;
+
+  knobProps?: HTMLAttributes<HTMLDivElement> & MotionProps;
   /**
-   * You can pass props directly to check mark element (svg path with motion props)
+   * You can pass props directly to knob element (div with motion props)
    * @example
    * jsx```
    *  <Switch
-   *    pathProps={{
-   *          strokeLinecap: 'square',
+   *    knobProps={{
+   *          className: 'foo bar',
    *       }}
    *   />
    *  ```
    *
    *  jsx```
    *  <Switch
-   *    pathProps={{
+   *    knobProps={{
    *         transition: { type: 'spring', stiffness: 900, damping: 50 },
    *        }}
    *   />
@@ -29,4 +30,4 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
    */
 }
 
-export type CheckboxProps = Props & MotionProps;
+export type SwitchProps = Props & MotionProps;

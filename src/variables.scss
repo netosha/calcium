@@ -17,6 +17,9 @@
   --red: #ee4444;
   --violet: #bb00ff;
   --purple: #6600ff;
+
+  --zModal: 9998;
+  --zNotifications: 9999;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +28,7 @@
     --foreground: #333333;
     --secondary: #aaaaaa;
     --text: #ffffff;
-    --control: #4d4d4d;
+    --control: #2b2b2b;
     --knob: #ffffff;
     --black: #000000;
     --gray: #555555;

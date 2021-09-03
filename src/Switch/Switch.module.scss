@@ -1,0 +1,51 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.switch{
+  background-color: var(--control);
+  border-radius: 9999px;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  padding: 0.25rem;
+  width: 2rem;
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+.knob{
+  display: flex;
+  width: 1rem;
+  background: white;
+  height: 1rem;
+  border-radius: 9999px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.checked{
+  background-color: var(--azure);
+  justify-content: flex-end;
+}
+
+.disabled{
+  cursor: not-allowed;
+  background-color: var(--gray);
+}
+
+
+.success{
+  background-color: var(--green);
+}
+
+.danger{
+  background-color: var(--red);
+}
+
+.warning{
+  background-color: var(--yellow);
+}

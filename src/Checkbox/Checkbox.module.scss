@@ -18,8 +18,9 @@
   width: 1.25rem;
   height: 1.25rem;
   background-color: var(--control);
-  transition: 0.2s;
   stroke: white;
+
+  transition: background-color 0.15s;
 }
 
 .checked{
