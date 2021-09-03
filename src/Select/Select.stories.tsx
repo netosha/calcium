@@ -14,6 +14,14 @@ export const Default = () => (
   </Select>
 );
 
+export const Rounded = () => (
+  <Select rounded>
+    <option>Foo</option>
+    <option>Bar</option>
+    <option>Baz</option>
+  </Select>
+);
+
 export const Disabled = () => (
   <Select disabled>
     <option>Foo</option>
