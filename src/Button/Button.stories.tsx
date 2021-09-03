@@ -6,8 +6,8 @@ export default {
 };
 
 export const Default = () => <Button>Button</Button>;
-export const Secondary = () => <Button secondary>Danger</Button>;
-export const Disabled = () => <Button disabled>Danger</Button>;
+export const Secondary = () => <Button secondary>Secondary</Button>;
+export const Disabled = () => <Button disabled>Disabled</Button>;
 export const Rounded = () => <Button rounded>Rounded</Button>;
 export const Success = () => <Button success>Success</Button>;
 export const Danger = () => <Button danger>Danger</Button>;

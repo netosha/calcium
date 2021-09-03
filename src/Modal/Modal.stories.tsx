@@ -11,11 +11,7 @@ export const Default = () => {
   return (
     <div>
       <Button onClick={() => setActive(!active)}>Toggle modal</Button>
-      <Modal
-        style={{ maxWidth: '100%' }}
-        onClose={() => setActive(false)}
-        isOpen={active}
-      >
+      <Modal onClose={() => setActive(false)} isOpen={active}>
         Test text
       </Modal>
     </div>

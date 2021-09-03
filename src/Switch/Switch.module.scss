@@ -7,6 +7,7 @@
 
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-shrink: 0;
   flex-grow: 0;
 
@@ -20,7 +21,7 @@
 .knob{
   display: flex;
   width: 1rem;
-  background: white;
+  background: var(--white);
   height: 1rem;
   border-radius: 9999px;
   flex-grow: 0;
@@ -32,12 +33,6 @@
   justify-content: flex-end;
 }
 
-.disabled{
-  cursor: not-allowed;
-  background-color: var(--gray);
-}
-
-
 .success{
   background-color: var(--green);
 }
@@ -48,4 +43,9 @@
 
 .warning{
   background-color: var(--yellow);
+}
+
+.disabled{
+  cursor: not-allowed;
+  background-color: var(--disabled);
 }

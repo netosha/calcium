@@ -37,13 +37,6 @@
   border-radius: 9999px;
 }
 
-.disabled{
-  cursor: not-allowed;
-  background-color: var(--gray);
-  color: var(--white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4'%3E%3Cpath d='M 0.5 0.5 L 3 3.5 L 5.5 0.5 Z' fill='white' stroke='white' strokeLinecap='round' strokeLinejoin='round' /%3E%3C/svg%3E");
-}
-
 .success{
   box-shadow: inset 0 0 0 1.5px var(--green);
 }
@@ -54,4 +47,11 @@
 
 .warning{
   box-shadow: inset 0 0 0 1.5px var(--yellow);
+}
+
+.disabled{
+  cursor: not-allowed;
+  background-color: var(--disabled);
+  color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4'%3E%3Cpath d='M 0.5 0.5 L 3 3.5 L 5.5 0.5 Z' fill='white' stroke='white' strokeLinecap='round' strokeLinejoin='round' /%3E%3C/svg%3E");
 }

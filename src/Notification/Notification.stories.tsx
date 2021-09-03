@@ -13,6 +13,14 @@ export const Default = () => (
   </div>
 );
 
+export const Secondary = () => (
+  <div style={{ display: 'flex' }}>
+    <Notification secondary onClose={() => alert('Notification closed')}>
+      Notification
+    </Notification>
+  </div>
+);
+
 export const Closable = () => (
   <div style={{ display: 'flex' }}>
     <Notification onClose={() => alert('Notification closed')}>
@@ -40,14 +48,6 @@ export const Danger = () => (
 export const Warning = () => (
   <div style={{ display: 'flex' }}>
     <Notification warning onClose={() => alert('Notification closed')}>
-      Notification
-    </Notification>
-  </div>
-);
-
-export const Secondary = () => (
-  <div style={{ display: 'flex' }}>
-    <Notification secondary onClose={() => alert('Notification closed')}>
       Notification
     </Notification>
   </div>
