@@ -29,13 +29,13 @@ const notificationExit = {
 // For ex: listeners[0] = useState()[1]
 let listeners = [];
 
-type ShowedNotifications = NotificationProps & {
+type ShowedNotification = NotificationProps & {
   date: number;
   duration: number;
 };
-let notifications: ShowedNotifications[] = [];
+let notifications: ShowedNotification[] = [];
 
-const setNotifications = (newState: ShowedNotifications[]) => {
+const setNotifications = (newState: ShowedNotification[]) => {
   notifications = newState;
 
   listeners.forEach((l) => l(notifications));
@@ -104,8 +104,8 @@ const useNotifications = () => {
     ReactDOM.render(
       <motion.div className={cn(styles.container)}>
         <AnimatePresence initial={false}>
-          {notifications.map((x) => {
-            const { date, duration, children, ...rest } = x;
+          {notifications.map((n) => {
+            const { date, duration, children, ...rest } = n;
             return (
               <Notification
                 dragConstraints={notificationDragConstraints}
@@ -114,6 +114,7 @@ const useNotifications = () => {
                 drag="x"
                 dragElastic={0.2}
                 onClose={() => removeNotification(date)}
+                onDragEnd={() => removeNotification(date)}
                 initial={notificationInitial}
                 animate={notificationAnimate}
                 exit={notificationExit}
