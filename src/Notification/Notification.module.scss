@@ -4,10 +4,13 @@
 .notification{
   font-family: $font-family;
   font-size: 1rem;
-  padding: 0.75rem 1.25rem;
+
   background-color: var(--azure);
   color: var(--white);
+
   border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+
 }
 
 .container{
@@ -29,6 +32,9 @@
   stroke: white;
   z-index: var(--zNotifications);
 
+  .notification{
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 8px 0px, rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
+  }
 }
 
 .closable{
@@ -48,6 +54,7 @@
   height: 1.25rem;
   color: var(--white);
   cursor: pointer;
+
   position: absolute;
   right: 0.75rem;
 }
