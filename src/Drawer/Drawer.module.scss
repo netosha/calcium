@@ -1,0 +1,31 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.overlay{
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  height: 100vh;
+
+  // Fix safari 100vh bug
+  //noinspection CssInvalidPropertyValue
+  min-height: -webkit-fill-available;
+  width: 100vw;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-shrink: 0;
+
+  z-index: var(--zModal);
+}
+
+.drawer{
+  position: relative;
+  // Fix safari 100vh bug
+  //noinspection CssInvalidPropertyValue
+  min-height: -webkit-fill-available;
+  height: 100vh;
+
+  background: var(--foreground);
+
+}

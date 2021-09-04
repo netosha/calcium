@@ -25,9 +25,14 @@
 
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
+  color: var(--white);
   background-color: var(--disabled);
+
+  &::placeholder {
+    color: var(--white);
+  }
 }
 
 .success{

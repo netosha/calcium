@@ -10,9 +10,13 @@ export const Default = () => {
   const [active, setActive] = React.useState(false);
   return (
     <div>
-      <Button onClick={() => setActive(!active)}>Toggle modal</Button>
+      <Button onClick={() => setActive(!active)}>Show modal</Button>
       <Modal onClose={() => setActive(false)} isOpen={active}>
-        Test text
+        <h2 style={{ fontFamily: 'sans-serif', margin: 0 }}>Modal title</h2>
+        <p style={{ fontFamily: 'sans-serif' }}>Sample modal content</p>
+        <div>
+          <Button onClick={() => setActive(false)}>Got it</Button>
+        </div>
       </Modal>
     </div>
   );

@@ -15,22 +15,34 @@ export const Disabled = () => {
 };
 
 export const Success = () => {
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState(true);
   return (
-    <Checkbox checked={active} success onClick={() => setActive((v) => !v)} />
+    <Checkbox
+      checked={active}
+      success={active}
+      onClick={() => setActive((v) => !v)}
+    />
   );
 };
 
 export const Danger = () => {
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState(true);
   return (
-    <Checkbox danger checked={active} onClick={() => setActive((v) => !v)} />
+    <Checkbox
+      danger={active}
+      checked={active}
+      onClick={() => setActive((v) => !v)}
+    />
   );
 };
 
 export const Warning = () => {
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState(true);
   return (
-    <Checkbox checked={active} warning onClick={() => setActive((v) => !v)} />
+    <Checkbox
+      checked={active}
+      warning={active}
+      onClick={() => setActive((v) => !v)}
+    />
   );
 };

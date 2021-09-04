@@ -5,30 +5,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import cn from 'clsx';
 import styles from './Modal.module.scss';
 import { ModalProps } from './Modal.types';
+import { useOutsideClick } from '../utils';
 
 export const closeVariants = {
   pressed: { scale: 0.9 },
-};
-
-const useOutsideClick = (
-  ref: React.RefObject<HTMLDivElement>,
-  onClick:
-    | React.MouseEventHandler<HTMLElement>
-    | React.MouseEventHandler<SVGGElement>,
-) => {
-  React.useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!ref?.current) return;
-      if (!ref.current.contains(e.target)) {
-        onClick?.(e);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    // eslint-disable-next-line consistent-return
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [ref, onClick]);
 };
 
 const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
@@ -45,11 +25,11 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
       ...rest
     } = props;
 
-    const { className: overlayClassName } = overlayProps;
+    const { className: overlayClassName, ...restOverlayProps } = overlayProps;
 
-    if (!document.getElementById('calcium-portal-root')) {
+    if (!document.getElementById('calcium-modal-root')) {
       const portalRoot = document.createElement('div');
-      portalRoot.id = 'calcium-portal-root';
+      portalRoot.id = 'calcium-modal-root';
       document.body.appendChild(portalRoot);
     }
 
@@ -67,13 +47,19 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ transition: 0.1 }}
-            {...overlayProps}
+            {...restOverlayProps}
           >
             <motion.div
               ref={modalRef}
-              initial={{ opacity: 0, y: 24, scale: 0.3 }}
-              animate={{ opacity: 1, y: -24, scale: 1 }}
-              exit={{ opacity: 0, y: 400, scale: 0.3 }}
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, y: 100, scale: 0.3 }}
+              transition={{
+                type: 'spring',
+                stiffness: 500,
+                damping: 30,
+                mass: 0.1,
+              }}
               className={cn(styles.wrapper, className)}
               {...rest}
             >
@@ -99,7 +85,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
           </motion.div>
         )}
       </AnimatePresence>,
-      document.getElementById('calcium-portal-root'),
+      document.getElementById('calcium-modal-root'),
     );
   }
 

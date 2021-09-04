@@ -58,8 +58,15 @@ export const NotificationsFeed = () => {
     useNotifications();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gridGap: '1rem' }}>
-      Showed notifications: {notifications.length}
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gridGap: '1rem',
+        fontFamily: 'sans-serif',
+      }}
+    >
+      <h2> Showed notifications: {notifications.length}</h2>
       <div style={{ display: 'flex' }}>
         <Button onClick={() => sendNotification('Foo')}>
           Send notification
