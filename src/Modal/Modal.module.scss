@@ -9,7 +9,7 @@
   // Fix safari 100vh bug
   //noinspection CssInvalidPropertyValue
   min-height: -webkit-fill-available;
-  min-width: calc(100vw - 2rem);
+  width: 100vw;
   padding: 1rem;
 
   align-items: center;

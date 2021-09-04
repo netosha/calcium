@@ -13,6 +13,14 @@ export const Default = () => (
   </div>
 );
 
+export const Secondary = () => (
+  <div style={{ display: 'flex' }}>
+    <Notification secondary onClose={() => alert('Notification closed')}>
+      Notification
+    </Notification>
+  </div>
+);
+
 export const Closable = () => (
   <div style={{ display: 'flex' }}>
     <Notification onClose={() => alert('Notification closed')}>
@@ -45,21 +53,20 @@ export const Warning = () => (
   </div>
 );
 
-export const Secondary = () => (
-  <div style={{ display: 'flex' }}>
-    <Notification secondary onClose={() => alert('Notification closed')}>
-      Notification
-    </Notification>
-  </div>
-);
-
 export const NotificationsFeed = () => {
   const { sendNotification, notifications, removeNotification } =
     useNotifications();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gridGap: '1rem' }}>
-      Showed notifications: {notifications.length}
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gridGap: '1rem',
+        fontFamily: 'sans-serif',
+      }}
+    >
+      <h2> Showed notifications: {notifications.length}</h2>
       <div style={{ display: 'flex' }}>
         <Button onClick={() => sendNotification('Foo')}>
           Send notification

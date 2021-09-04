@@ -1,7 +1,7 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.checkbox{
+.radio{
   // Disable nasty "blinking" in Webkit browser
   -webkit-backface-visibility:  hidden;
   -webkit-tap-highlight-color:  transparent;
@@ -14,17 +14,28 @@
   user-select: none;
 
   cursor: pointer;
-  border-radius: 25%;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: var(--control);
-  stroke: white;
+  border-radius: 9999px;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--secondary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   transition: background-color 0.15s;
 }
 
 .checked{
-  background: var(--azure);
+  background-color: var(--azure);
+}
+
+.knob{
+  background: var(--white);
+  width: 0.375rem;
+  height: 0.375rem;
+
+  border-radius: 9999px;
 }
 
 .success{
@@ -41,5 +52,5 @@
 
 .disabled{
   cursor: not-allowed;
-  background-color: var(--disabled);
+  background-color: var(--gray);
 }

@@ -31,7 +31,12 @@
 
 .disabled{
   cursor: not-allowed;
-  background-color: var(--gray);
+  color: var(--white);
+  background-color: var(--disabled);
+
+  &::placeholder{
+    color: var(--white);
+  }
 }
 
 .success{
