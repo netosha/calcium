@@ -108,9 +108,10 @@ const useNotifications = () => {
             const { date, duration, children, ...rest } = n;
             return (
               <Notification
+                layout
                 key={date}
                 drag="x"
-                dragElastic={false}
+                dragElastic
                 dragConstraints={notificationDragConstraints}
                 onClose={() => removeNotification(date)}
                 onDragEnd={() => removeNotification(date)}

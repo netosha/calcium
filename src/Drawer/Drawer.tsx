@@ -66,8 +66,7 @@ const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>((props, ref) => {
               transition={{
                 type: 'spring',
                 delay: 0,
-                duration: 0.2,
-                stiffness: 500,
+                stiffness: 750,
                 damping: 60,
                 mass: 1,
               }}
