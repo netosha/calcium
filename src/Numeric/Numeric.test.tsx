@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-describe('Button', () => {
+describe('Numeric', () => {
   it('should always return true for now', () => {
-    // TODO: Here should be Button tests
+    // TODO: Here should be Numeric tests
     expect(true).toEqual(true);
   });
 });

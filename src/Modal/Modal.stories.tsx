@@ -11,7 +11,11 @@ export const Default = () => {
   return (
     <div>
       <Button onClick={() => setActive(!active)}>Show modal</Button>
-      <Modal onClose={() => setActive(false)} isOpen={active}>
+      <Modal
+        onClose={() => setActive(false)}
+        style={{ marginRight: '2rem' }}
+        isOpen={active}
+      >
         <h2 style={{ fontFamily: 'sans-serif', margin: 0 }}>Modal title</h2>
         <p style={{ fontFamily: 'sans-serif' }}>Sample modal content</p>
         <div>
