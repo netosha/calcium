@@ -1,6 +1,6 @@
 import Button from './Button';
 import Input from './Input';
-import Number from './Number';
+import Numeric from './Numeric';
 import Textarea from './Textarea';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
@@ -12,7 +12,7 @@ import { Notification, useNotifications } from './Notification';
 export {
   Button,
   Input,
-  Number,
+  Numeric,
   Textarea,
   Checkbox,
   Radio,

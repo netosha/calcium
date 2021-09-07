@@ -20,7 +20,7 @@
   transition: box-shadow 0.12s;
 
   &:focus-within{
-    box-shadow: inset 0 0 0 1.5px var(--azure);
+    box-shadow: inset 0 0 0 2px var(--azure);
   }
 
 }
@@ -36,13 +36,13 @@
 }
 
 .success{
-  box-shadow: inset 0 0 0 1.5px var(--green);
+  box-shadow: inset 0 0 0 2px var(--green);
 }
 
 .danger{
-  box-shadow: inset 0 0 0 1.5px var(--red);
+  box-shadow: inset 0 0 0 2px var(--red);
 }
 
 .warning{
-  box-shadow: inset 0 0 0 1.5px var(--yellow);
+  box-shadow: inset 0 0 0 2px var(--yellow);
 }

@@ -1,23 +1,28 @@
 import * as React from 'react';
-import Number from './Number';
-import Input from '../Input';
+import Numeric from './Numeric';
 
 export default {
-  title: 'Number',
+  title: 'Numeric',
 };
 
 export const Default = () => {
-  const [state, setState] = React.useState<number | undefined | string>(
-    undefined,
-  );
+  const [state, setState] = React.useState<number | string>(5);
   return (
-    <div>
-      <Number
+    <div
+      style={{
+        flexDirection: 'column',
+        fontFamily: 'sans-serif',
+      }}
+    >
+      Outer state: {state}
+      <br />
+      <Numeric
+        style={{ marginTop: '0.75rem' }}
         placeholder="Test number"
         value={state}
         onChange={(n) => setState(n)}
       />
-      <Input />
+      <br />
     </div>
   );
 };
@@ -26,8 +31,9 @@ export const Disabled = () => {
   const [state, setState] = React.useState<number | string>(1);
   return (
     <div>
-      <Number
+      <Numeric
         disabled
+        style={{ width: '4rem' }}
         placeholder="Test number"
         value={state}
         onChange={(n) => setState(n)}
@@ -40,7 +46,7 @@ export const Success = () => {
   const [state, setState] = React.useState<number | string>(1);
   return (
     <div>
-      <Number
+      <Numeric
         style={{ width: '4rem' }}
         success
         value={state}
@@ -54,7 +60,7 @@ export const Danger = () => {
   const [state, setState] = React.useState<number | string>(1);
   return (
     <div>
-      <Number
+      <Numeric
         style={{ width: '4rem' }}
         danger
         value={state}
@@ -68,9 +74,9 @@ export const Warning = () => {
   const [state, setState] = React.useState<number | string>(1);
   return (
     <div>
-      <Number
+      <Numeric
         style={{ width: '4rem' }}
-        danger
+        warning
         value={state}
         onChange={(n) => setState(n)}
       />
