@@ -1,0 +1,149 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+@mixin thumb_style{
+  margin-top: -6px;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  background: white;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+
+}
+
+@mixin track_style{
+  border: none;
+  border-radius: 0.25rem;
+  width: 100%;
+  height:  0.25rem;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--azure) var(--progress), var(--secondary) var(--progress));
+
+}
+
+.range{
+  margin: 0;
+
+  background-color: transparent;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+
+  height: 2rem;
+
+  &::-webkit-slider-runnable-track {
+    @include track_style;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    @include thumb_style;
+  }
+
+
+  &::-moz-range-thumb{
+    -moz-appearance: none;
+
+    @include thumb_style
+  }
+
+  &::-moz-range-track{
+    @include track_style
+  }
+
+  &::-ms-track {
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+
+    @include track_style
+  }
+}
+
+.success{
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--green) var(--progress), var(--secondary) var(--progress));
+  }
+
+
+  &::-moz-range-track{
+    background: linear-gradient(to right, var(--green) var(--progress), var(--secondary) var(--progress));
+  }
+
+  &::-ms-track {
+    background: linear-gradient(to right, var(--green) var(--progress), var(--secondary) var(--progress));
+  }
+}
+
+
+.warning{
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+
+
+  &::-moz-range-track{
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+
+  &::-ms-track {
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+}
+
+
+.danger{
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--red) var(--progress), var(--secondary) var(--progress));
+  }
+
+
+  &::-moz-range-track{
+    background: linear-gradient(to right, var(--red) var(--progress), var(--secondary) var(--progress));
+  }
+
+  &::-ms-track {
+    background: linear-gradient(to right, var(--red) var(--progress), var(--secondary) var(--progress));
+  }
+}
+
+
+.warning{
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+
+
+  &::-moz-range-track{
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+
+  &::-ms-track {
+    background: linear-gradient(to right, var(--yellow) var(--progress), var(--secondary) var(--progress));
+  }
+}
+
+
+.disabled{
+  cursor: not-allowed;
+
+
+  &::-webkit-slider-runnable-track {
+    cursor: not-allowed;
+    background: linear-gradient(to right, var(--disabled) var(--progress), var(--secondary) var(--progress));
+  }
+
+
+  &::-moz-range-track{
+    cursor: not-allowed;
+    background: linear-gradient(to right, var(--disabled) var(--progress), var(--secondary) var(--progress));
+  }
+
+  &::-ms-track {
+    cursor: not-allowed;
+    background: linear-gradient(to right, var(--disabled) var(--progress), var(--secondary) var(--progress));
+  }
+}
+
