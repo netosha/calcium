@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-describe('Range', () => {
+describe('Calendar', () => {
   it('should always return true for now', () => {
-    // TODO: Here should be Range tests
+    // TODO: Here should be Calendar tests
     expect(true).toEqual(true);
   });
 });

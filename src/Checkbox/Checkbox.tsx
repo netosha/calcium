@@ -40,6 +40,7 @@ const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           [styles.warning]: warning,
         })}
         onClick={!disabled ? onClick : undefined}
+        role="checkbox"
         {...rest}
       >
         <svg viewBox="0 0 12 12" width="100%" height="100%">

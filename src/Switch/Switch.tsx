@@ -35,6 +35,7 @@ const Switch = React.forwardRef<HTMLDivElement, SwitchProps>((props, ref) => {
         [styles.warning]: warning,
       })}
       onClick={!disabled && onClick}
+      role="switch"
       {...rest}
     >
       <motion.div

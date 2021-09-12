@@ -7,6 +7,7 @@ import Radio from './Radio';
 import Switch from './Switch';
 import Modal from './Modal';
 import Drawer from './Drawer';
+import Calendar from './Calendar';
 import { Notification, useNotifications } from './Notification';
 
 export {
@@ -19,6 +20,7 @@ export {
   Switch,
   Modal,
   Drawer,
+  Calendar,
   Notification,
   useNotifications,
 };

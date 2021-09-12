@@ -1,0 +1,140 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.calendar{
+  font-family: sans-serif;
+  background: var(--control);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  float: left;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header{
+  display: flex;
+}
+
+.month_select{
+  cursor: pointer;
+  margin: 0 0.5rem 0 0;
+  padding: 0;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  background: none;
+
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: var(--gray);
+  font-weight: bold;
+  text-align: left;
+
+
+  @media (prefers-color-scheme: dark){
+    color: var(--secondary);
+  }
+}
+
+.month_option{
+  text-transform: capitalize;
+}
+
+.year_input{
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-weight: bold;
+  width: auto;
+  color: var(--gray);
+
+  @media (prefers-color-scheme: dark){
+    color: var(--secondary);
+  }
+}
+
+.labels{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 0.15rem;
+  margin-top: 0.25rem;
+}
+
+.label{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text)
+
+}
+
+.label_weekend{
+  font-weight: bold;
+  color: var(--red)
+}
+
+.days{
+  color: var(--text);
+  margin-top: 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 0.15rem;
+  grid-row-gap: 0.15rem;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+.day{
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+
+  transition: background-color 0.2s;
+
+  position: relative;
+
+  &:hover{
+   background-color: rgba(0, 153, 255, .1);
+  }
+}
+
+.current_day{
+  color: var(--white);
+  background: var(--azure);
+  font-weight: bold;
+  overflow: hidden;
+
+  &:hover{
+    background: var(--azure);
+  }
+
+  .active{
+    opacity: 0;
+  }
+}
+
+.active{
+  top: 4px;
+  right: 4px;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+
+  background-color: var(--red);
+  transition: opacity 0.2s;
+}

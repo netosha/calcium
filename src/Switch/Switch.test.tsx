@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-describe('Checkbox', () => {
+describe('Switch', () => {
   it('should always return true for now', () => {
-    // TODO: Here should be Checkbox tests
+    // TODO: Here should be Switch tests
     expect(true).toEqual(true);
   });
 });
