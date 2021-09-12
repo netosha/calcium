@@ -12,7 +12,6 @@ const Range = React.forwardRef<HTMLInputElement, RangeProps>((props, ref) => {
     min,
     max,
     style,
-    rounded,
     disabled,
     success,
     danger,
@@ -36,7 +35,6 @@ const Range = React.forwardRef<HTMLInputElement, RangeProps>((props, ref) => {
       min={min}
       max={max}
       className={cn(className, styles.range, {
-        [styles.rounded]: rounded,
         [styles.disabled]: disabled,
         [styles.success]: success,
         [styles.danger]: danger,
