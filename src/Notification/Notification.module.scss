@@ -1,80 +1,81 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.notification{
+.notification {
+  padding: 0.75rem 1.25rem;
   font-family: $font-family;
   font-size: 1rem;
-
-  background-color: var(--azure);
   color: var(--white);
 
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  background-color: var(--azure);
 
+  border-radius: 0.5rem;
 }
 
-.container{
+.container {
   position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--zNotifications);
+
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  max-width: 15rem;
+
+  max-height: 100vh;
+  padding-top: 1rem;
 
   // Needs to show notification's shadows
   padding-right: 1rem;
-  padding-top: 1rem;
-  top: 0;
-  right: 0;
-
-  max-height: 100vh;
-  max-width: 15rem;
-
-  display: grid;
-  grid-gap: 1rem;
-  grid-auto-rows: auto;
 
   stroke: white;
-  z-index: var(--zNotifications);
 
-  .notification{
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 8px 0px, rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
+  .notification {
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 8px 0px,
+      rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
   }
 }
 
-.closable{
+.closable {
   position: relative;
   padding: 0.75rem 3rem 0.75rem 1.25rem;
 }
 
-.close{
-  //Disable text selection on double click
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
+.close {
+
+  position: absolute;
+  right: 0.75rem;
 
   width: 1.25rem;
   height: 1.25rem;
   color: var(--white);
   cursor: pointer;
-
-  position: absolute;
-  right: 0.75rem;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  //Disable text selection on double click
+  -webkit-touch-callout: none; /* iOS Safari */
 }
 
-.success{
+.success {
   background-color: var(--green);
 }
 
-.danger{
+.danger {
   background-color: var(--red);
 }
 
-.warning{
+.warning {
   color: var(--black);
-  svg{
+  background-color: var(--yellow);
+
+  svg {
     stroke: var(--black);
   }
-  background-color: var(--yellow);
 }
 
-.secondary{
+.secondary {
   background-color: var(--secondary);
 }

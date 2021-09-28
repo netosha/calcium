@@ -1,45 +1,45 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.checkbox{
-  // Disable nasty "blinking" in Webkit browser
-  -webkit-backface-visibility:  hidden;
-  -webkit-tap-highlight-color:  transparent;
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
 
-  // Disable text selection on double click
-  -webkit-touch-callout: none; /* iOS Safari */
+  cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-
-  cursor: pointer;
-  border-radius: 25%;
-  width: 1.25rem;
-  height: 1.25rem;
   background-color: var(--control);
+  border-radius: 25%;
   stroke: white;
 
   transition: background-color 0.15s;
+  // Disable nasty "blinking" in Webkit browser
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+  // Disable text selection on double click
+  -webkit-touch-callout: none; /* iOS Safari */
 }
 
-.checked{
+.checked {
   background: var(--azure);
 }
 
-.success{
+.success {
   background-color: var(--green);
 }
 
-.danger{
+.danger {
   background-color: var(--red);
 }
 
-.warning{
+.warning {
   background-color: var(--yellow);
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
   background-color: var(--disabled);
 }
