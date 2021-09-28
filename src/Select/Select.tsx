@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion } from 'framer-motion';
+
 import styles from './Select.module.scss';
 import { SelectProps } from './Select.types';
 

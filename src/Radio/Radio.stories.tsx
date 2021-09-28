@@ -1,6 +1,6 @@
 import * as React from 'react';
+
 import Radio from './Radio';
-import { Button, Switch } from '../index';
 
 export default {
   title: 'Radio',

@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { Calendar } from '../index';
 
 export default {
@@ -11,7 +12,7 @@ export const Default = () => {
   return (
     <div>
       <Calendar value={date} locale="en" onChange={(d) => setDate(d)} />
-      {date?.toLocaleTimeString()} {date?.toLocaleDateString()}
+      {`${date?.toLocaleTimeString()} ${date?.toLocaleDateString()}`}
     </div>
   );
 };
@@ -33,7 +34,7 @@ export const WithActiveDates = () => {
         locale="en"
         onChange={(d) => setDate(d)}
       />
-      {date?.toLocaleTimeString()} {date?.toLocaleDateString()}
+      {`${date?.toLocaleTimeString()} ${date?.toLocaleDateString()}`}
     </div>
   );
 };

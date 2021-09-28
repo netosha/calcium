@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Drawer from './Drawer';
+
 import { Button } from '../index';
+import Drawer from './Drawer';
 
 export default {
   title: 'Drawer',

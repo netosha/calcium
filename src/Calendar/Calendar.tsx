@@ -1,8 +1,10 @@
 import React from 'react';
+
 import cn from 'clsx';
 import { motion, Transition } from 'framer-motion';
-import { CalendarProps } from './Calendar.types';
+
 import styles from './Calendar.module.scss';
+import { CalendarProps } from './Calendar.types';
 
 const getMonthsLocaled = (locale: string) =>
   Array.from({ length: 12 }).map((x, i) =>
@@ -136,7 +138,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
                 daysClassName,
                 i + 1 === day && cn(styles.current_day, selectedDayClassName),
               )}
-              onClick={(e) => setDay(i + 1)}
+              onClick={() => setDay(i + 1)}
               {...restDayProps}
               {...(i + 1 === day ? restSelectedDayProps : {})}
             >

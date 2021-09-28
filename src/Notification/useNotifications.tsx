@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion, AnimatePresence } from 'framer-motion';
+import ReactDOM from 'react-dom';
+
 import Notification from './Notification';
-import { NotificationProps } from './Notification.types';
 import styles from './Notification.module.scss';
+import { NotificationProps } from './Notification.types';
 
 const notificationDragConstraints = { top: 0, left: 0, right: 0, bottom: 0 };
 const notificationInitial = { opacity: 0, y: 50, scale: 0.3 };
@@ -105,7 +107,7 @@ const useNotifications = () => {
       <motion.div className={cn(styles.container)}>
         <AnimatePresence initial={false}>
           {notifications.map((n) => {
-            const { date, duration, children, ...rest } = n;
+            const { date, children, ...rest } = n;
             return (
               <Notification
                 layout

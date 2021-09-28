@@ -1,11 +1,12 @@
 import React from 'react';
+
+import cn from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 import ReactDOM from 'react-dom';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import cn from 'clsx';
+import { useOutsideClick } from '../utils';
 import styles from './Modal.module.scss';
 import { ModalProps } from './Modal.types';
-import { useOutsideClick } from '../utils';
 
 export const closeVariants = {
   pressed: { scale: 0.9 },

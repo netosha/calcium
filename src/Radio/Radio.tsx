@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion, Transition, Variant } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion, Transition, Variant } from 'framer-motion';
+
 import styles from './Radio.module.scss';
 import { RadioProps } from './Radio.types';
 

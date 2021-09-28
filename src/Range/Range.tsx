@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion } from 'framer-motion';
+
 import styles from './Range.module.scss';
 import { RangeProps } from './Range.types';
 

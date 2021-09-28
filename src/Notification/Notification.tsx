@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion, Variants } from 'framer-motion';
+
 import styles from './Notification.module.scss';
 import { NotificationProps } from './Notification.types';
 

@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Numeric from './Numeric';
 
 export default {
@@ -14,7 +15,8 @@ export const Default = () => {
         fontFamily: 'sans-serif',
       }}
     >
-      Outer state: {state}
+      Outer state:
+      {state}
       <br />
       <Numeric
         style={{ marginTop: '0.75rem' }}
