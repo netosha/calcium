@@ -29,7 +29,7 @@ const notificationExit = {
 // Every listener should be setState function
 //
 // For ex: listeners[0] = useState()[1]
-let listeners = [];
+let listeners: React.Dispatch<any>[] = [];
 
 type ShowedNotification = NotificationProps & {
   date: number;

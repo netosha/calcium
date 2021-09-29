@@ -27,7 +27,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
     // Share fresh state with setInterval
     // If use regular React.useState() hook state freezes to value when  setInterval called
     const update = React.useState<Date>()[1];
-    const state = React.useRef<string | number>(value);
+    const state = React.useRef<string | number>(value ?? 0);
     const setState = (newState: string | number) => {
       state.current = newState;
       update(new Date());
@@ -94,12 +94,12 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
 
     const onMouseUp = () => {
       tickerState.current = null;
-      onChange(state.current);
+      onChange?.(state.current);
     };
 
     React.useEffect(() => {
       if (!tickerState.current) {
-        onChange(state.current);
+        onChange?.(state.current);
       }
     }, [state.current]);
 
@@ -132,7 +132,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           <motion.button
             className={styles.ticker}
             disabled={disabled}
-            whileTap={!disabled && 'up'}
+            whileTap={!disabled ? 'up' : undefined}
             onMouseDown={() => onMouseDown('up')}
             onMouseUp={onMouseUp}
           >
@@ -152,7 +152,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           </motion.button>
           <motion.button
             className={styles.ticker}
-            whileTap={!disabled && 'down'}
+            whileTap={!disabled ? 'down' : undefined}
             disabled={disabled}
             onMouseDown={() => onMouseDown('down')}
             onMouseUp={onMouseUp}
