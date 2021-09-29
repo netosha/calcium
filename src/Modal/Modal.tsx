@@ -86,7 +86,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
           </motion.div>
         )}
       </AnimatePresence>,
-      document.getElementById('calcium-modal-root'),
+      document.getElementById('calcium-modal-root')!,
     );
   }
 

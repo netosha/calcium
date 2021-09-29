@@ -36,7 +36,7 @@ const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>((props) => {
     }
 
     const drawerRef = React.useRef<HTMLDivElement>(null);
-    useOutsideClick(drawerRef, onOutsideClick ?? onClose);
+    useOutsideClick(drawerRef, onOutsideClick ? onClose : undefined);
 
     return ReactDOM.createPortal(
       <AnimatePresence>
@@ -78,7 +78,7 @@ const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>((props) => {
           </motion.div>
         )}
       </AnimatePresence>,
-      document.getElementById('calcium-drawer-root'),
+      document.getElementById('calcium-drawer-root')!,
     );
   }
 

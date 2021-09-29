@@ -36,7 +36,7 @@ const Switch = React.forwardRef<HTMLDivElement, SwitchProps>((props, ref) => {
         [styles.danger]: danger,
         [styles.warning]: warning,
       })}
-      onClick={!disabled && onClick}
+      onClick={!disabled ? onClick : undefined}
       role="switch"
       {...rest}
     >
