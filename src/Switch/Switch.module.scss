@@ -1,51 +1,51 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.switch{
-  background-color: var(--control);
-  border-radius: 9999px;
+.switch {
 
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-shrink: 0;
   flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-start;
+  width: 2rem;
 
   padding: 0.25rem;
-  width: 2rem;
   cursor: pointer;
+  background-color: var(--control);
+  border-radius: 9999px;
 
   transition: background-color 0.15s;
 }
 
-.knob{
+.knob {
   display: flex;
-  width: 1rem;
-  background: var(--white);
-  height: 1rem;
-  border-radius: 9999px;
   flex-grow: 0;
   flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  background: var(--white);
+  border-radius: 9999px;
 }
 
-.checked{
-  background-color: var(--azure);
+.checked {
   justify-content: flex-end;
+  background-color: var(--azure);
 }
 
-.success{
+.success {
   background-color: var(--green);
 }
 
-.danger{
+.danger {
   background-color: var(--red);
 }
 
-.warning{
+.warning {
   background-color: var(--yellow);
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
   background-color: var(--disabled);
 }

@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion, Transition } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion, Transition } from 'framer-motion';
+
 import styles from './Switch.module.scss';
 import { SwitchProps } from './Switch.types';
 
@@ -34,7 +36,7 @@ const Switch = React.forwardRef<HTMLDivElement, SwitchProps>((props, ref) => {
         [styles.danger]: danger,
         [styles.warning]: warning,
       })}
-      onClick={!disabled && onClick}
+      onClick={!disabled ? onClick : undefined}
       role="switch"
       {...rest}
     >

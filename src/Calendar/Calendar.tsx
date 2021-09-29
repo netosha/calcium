@@ -1,16 +1,18 @@
 import React from 'react';
+
 import cn from 'clsx';
 import { motion, Transition } from 'framer-motion';
-import { CalendarProps } from './Calendar.types';
+
 import styles from './Calendar.module.scss';
+import { CalendarProps } from './Calendar.types';
 
 const getMonthsLocaled = (locale: string) =>
-  Array.from({ length: 12 }).map((x, i) =>
+  Array.from({ length: 12 }).map((_, i) =>
     new Date(2001, i, 1).toLocaleString(locale, { month: 'short' }),
   );
 
 const getWeekDaysLocaled = (locale: string) =>
-  Array.from({ length: 7 }).map((x, i) =>
+  Array.from({ length: 7 }).map((_, i) =>
     new Date(2001, 8, 10 + i).toLocaleString(locale, {
       weekday: 'short',
     }),
@@ -44,7 +46,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
   (props, ref) => {
     const {
       className,
-      value,
+      value = new Date(),
       onChange,
       locale,
       daysProps = {},
@@ -72,7 +74,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
       selectedDayProps;
 
     React.useEffect(() => {
-      onChange(new Date(Number(year), month, day));
+      onChange?.(new Date(Number(year), month, day));
     }, [year, month, day]);
 
     return (
@@ -122,12 +124,12 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
         >
           {Array.from({
             length: getFirstDayOffset(new Date(Number(year), month, day)),
-          }).map((v, i) => (
+          }).map((_, i) => (
             <div key={`offset-${i + 1}`} />
           ))}
           {Array.from({
             length: getDaysAmount(new Date(Number(year), month, day)),
-          }).map((v, i) => (
+          }).map((_, i) => (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
             <div
               key={`${year}-${month}-${i + 1}`}
@@ -136,7 +138,7 @@ const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
                 daysClassName,
                 i + 1 === day && cn(styles.current_day, selectedDayClassName),
               )}
-              onClick={(e) => setDay(i + 1)}
+              onClick={() => setDay(i + 1)}
               {...restDayProps}
               {...(i + 1 === day ? restSelectedDayProps : {})}
             >

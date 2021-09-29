@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 describe('Range', () => {
   it('should always return true for now', () => {
     // TODO: Here should be Range tests

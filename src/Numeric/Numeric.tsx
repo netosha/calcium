@@ -1,9 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion } from 'framer-motion';
+
+import { sleep } from '../utils';
 import styles from './Number.module.scss';
 import { NumberProps } from './Numeric.types';
-import { sleep } from '../utils';
 
 const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
   (props, ref) => {
@@ -25,7 +27,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
     // Share fresh state with setInterval
     // If use regular React.useState() hook state freezes to value when  setInterval called
     const update = React.useState<Date>()[1];
-    const state = React.useRef<string | number>(value);
+    const state = React.useRef<string | number>(value ?? 0);
     const setState = (newState: string | number) => {
       state.current = newState;
       update(new Date());
@@ -35,7 +37,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
       null,
     );
 
-    const onTickerUp = (e) => {
+    const onTickerUp = () => {
       const parsedValue = Number(state.current);
       if (!Number.isNaN(parsedValue)) {
         setState(parsedValue + Number(step));
@@ -44,7 +46,7 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
       }
     };
 
-    const onTickerDown = (e) => {
+    const onTickerDown = () => {
       const parsedValue = Number(state.current);
       if (!Number.isNaN(parsedValue)) {
         setState(parsedValue - Number(step));
@@ -53,28 +55,25 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
       }
     };
 
-    const onTickerUpPressed = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onTickerUpPressed = () => {
       if (tickerState.current?.pressed) {
-        onTickerUp(e);
+        onTickerUp();
         setTimeout(onTickerUpPressed, 50);
       }
     };
 
-    const onTickerDownPressed = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onTickerDownPressed = () => {
       if (tickerState.current?.pressed) {
-        onTickerDown(e);
+        onTickerDown();
         setTimeout(onTickerDownPressed, 50);
       }
     };
 
-    const onMouseDown = async (
-      e: React.MouseEvent<HTMLButtonElement>,
-      direction: 'up' | 'down',
-    ) => {
+    const onMouseDown = async (direction: 'up' | 'down') => {
       if (direction === 'up') {
-        onTickerUp(e);
+        onTickerUp();
       } else {
-        onTickerDown(e);
+        onTickerDown();
       }
 
       const dateId = Date.now();
@@ -86,21 +85,21 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
         tickerState.current?.pressed === true
       ) {
         if (direction === 'up') {
-          onTickerUpPressed(e);
+          onTickerUpPressed();
         } else {
-          onTickerDownPressed(e);
+          onTickerDownPressed();
         }
       }
     };
 
     const onMouseUp = () => {
       tickerState.current = null;
-      onChange(state.current);
+      onChange?.(state.current);
     };
 
     React.useEffect(() => {
       if (!tickerState.current) {
-        onChange(state.current);
+        onChange?.(state.current);
       }
     }, [state.current]);
 
@@ -133,8 +132,8 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           <motion.button
             className={styles.ticker}
             disabled={disabled}
-            whileTap={!disabled && 'up'}
-            onMouseDown={(e) => onMouseDown(e, 'up')}
+            whileTap={!disabled ? 'up' : undefined}
+            onMouseDown={() => onMouseDown('up')}
             onMouseUp={onMouseUp}
           >
             <motion.svg
@@ -153,9 +152,9 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           </motion.button>
           <motion.button
             className={styles.ticker}
-            whileTap={!disabled && 'down'}
+            whileTap={!disabled ? 'down' : undefined}
             disabled={disabled}
-            onMouseDown={(e) => onMouseDown(e, 'down')}
+            onMouseDown={() => onMouseDown('down')}
             onMouseUp={onMouseUp}
           >
             <motion.svg

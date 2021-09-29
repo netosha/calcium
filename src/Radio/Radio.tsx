@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion, Transition, Variant } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion, Transition, Variant } from 'framer-motion';
+
 import styles from './Radio.module.scss';
 import { RadioProps } from './Radio.types';
 
@@ -27,6 +29,8 @@ const Radio = React.forwardRef<HTMLDivElement, RadioProps>((props, ref) => {
     ...rest
   } = props;
 
+  const x = styles.checked;
+  console.log(x);
   return (
     <motion.div
       ref={ref}
@@ -37,8 +41,8 @@ const Radio = React.forwardRef<HTMLDivElement, RadioProps>((props, ref) => {
         [styles.danger]: danger,
         [styles.warning]: warning,
       })}
-      onClick={!disabled && onClick}
-      whileTap={!disabled ? whileTap : null}
+      onClick={!disabled ? onClick : undefined}
+      whileTap={!disabled ? whileTap : undefined}
       {...rest}
     >
       <motion.div

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 describe('Modal', () => {
   it('should always return true for now', () => {
     // TODO: Here should be Modal tests

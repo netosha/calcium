@@ -1,20 +1,22 @@
 import Button from './Button';
-import Input from './Input';
-import Numeric from './Numeric';
-import Textarea from './Textarea';
+import Calendar from './Calendar';
 import Checkbox from './Checkbox';
+import Drawer from './Drawer';
+import Input from './Input';
+import Modal from './Modal';
+import { Notification, useNotifications } from './Notification';
+import Numeric from './Numeric';
 import Radio from './Radio';
 import Switch from './Switch';
-import Modal from './Modal';
-import Drawer from './Drawer';
-import Calendar from './Calendar';
-import { Notification, useNotifications } from './Notification';
+import Textarea from './Textarea';
+import Tooltip from './Tooltip';
 
 export {
   Button,
   Input,
   Numeric,
   Textarea,
+  Tooltip,
   Checkbox,
   Radio,
   Switch,
