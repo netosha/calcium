@@ -9,12 +9,14 @@ import Numeric from './Numeric';
 import Radio from './Radio';
 import Switch from './Switch';
 import Textarea from './Textarea';
+import Tooltip from './Tooltip';
 
 export {
   Button,
   Input,
   Numeric,
   Textarea,
+  Tooltip,
   Checkbox,
   Radio,
   Switch,

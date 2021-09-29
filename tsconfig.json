@@ -34,7 +34,7 @@
     "noEmit": true,
     "isolatedModules": true
   },
-  "include": ["src//*.ts", "src//*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",
