@@ -1,11 +1,12 @@
 import React from 'react';
+
+import cn from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 import ReactDOM from 'react-dom';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import cn from 'clsx';
+import { useOutsideClick } from '../utils';
 import styles from './Drawer.module.scss';
 import { DrawerProps } from './Drawer.types';
-import { useOutsideClick } from '../utils';
 
 export const closeVariants = {
   pressed: { scale: 0.9 },
@@ -13,7 +14,7 @@ export const closeVariants = {
 
 const dragConstraints = { top: 0, left: 0, right: 0, bottom: 0 };
 
-const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>((props, ref) => {
+const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>((props) => {
   // Prevent Server Side Rendering
   // https://github.com/reactjs/react-modal/issues/580
   if (typeof window !== 'undefined') {

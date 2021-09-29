@@ -1,6 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import cn from 'clsx';
+import { motion } from 'framer-motion';
+
 import styles from './Textarea.module.scss';
 import { TextareaProps } from './Textarea.types';
 

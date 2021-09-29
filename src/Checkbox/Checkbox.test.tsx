@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 describe('Checkbox', () => {
   it('should always return true for now', () => {
     // TODO: Here should be Checkbox tests

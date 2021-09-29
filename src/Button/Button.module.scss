@@ -1,53 +1,53 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.button{
+.button {
+
+  padding: 0.35em 1.5em;
   // Remove all default styles
   margin: 0;
-  border: none;
+  font-family: $font-family;
 
-  //Disable nasty "blinking" in safari browser
-  -webkit-backface-visibility:  hidden;
-  -webkit-tap-highlight-color:  transparent;
-
-  background-color: var(--azure);
+  font-size: 1rem;
   color: var(--white);
   cursor: pointer;
 
-  font-size: 1rem;
-  font-family: $font-family;
-
-  padding: 0.35em 1.5em;
+  background-color: var(--azure);
+  border: none;
   border-radius: 0.5rem;
 
-  &:focus{
+  //Disable nasty "blinking" in safari browser
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
     outline: none;
   }
 }
 
-.rounded{
+.rounded {
   border-radius: 9999px;
 }
 
-.success{
+.success {
   background-color: var(--green);
 }
 
-.danger{
+.danger {
   background-color: var(--red);
 }
 
-.warning{
-  stroke: var(--black);
+.warning {
   color: var(--black);
   background-color: var(--yellow);
+  stroke: var(--black);
 }
 
-.secondary{
+.secondary {
   background-color: var(--secondary);
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
   background-color: var(--disabled);
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Modal from './Modal';
+
 import { Button } from '../index';
+import Modal from './Modal';
 
 export default {
   title: 'Modal',

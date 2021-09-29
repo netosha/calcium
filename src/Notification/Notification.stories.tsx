@@ -1,7 +1,8 @@
 import * as React from 'react';
-import Notification from './Notification';
-import { useNotifications } from './index';
+
 import { Button } from '../index';
+import { useNotifications } from './index';
+import Notification from './Notification';
 
 export default {
   title: 'Notification',
@@ -66,7 +67,11 @@ export const NotificationsFeed = () => {
         fontFamily: 'sans-serif',
       }}
     >
-      <h2> Showed notifications: {notifications.length}</h2>
+      <h2>
+        {' '}
+        Showed notifications:
+        {notifications.length}
+      </h2>
       <div style={{ display: 'flex' }}>
         <Button onClick={() => sendNotification('Foo')}>
           Send notification

@@ -1,56 +1,56 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.radio{
-  // Disable nasty "blinking" in Webkit browser
-  -webkit-backface-visibility:  hidden;
-  -webkit-tap-highlight-color:  transparent;
+.radio {
 
-  // Disable text selection on double click
-  -webkit-touch-callout: none; /* iOS Safari */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+
+  cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-
-  cursor: pointer;
-  border-radius: 9999px;
-  width: 1rem;
-  height: 1rem;
   background-color: var(--secondary);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 9999px;
 
   transition: background-color 0.15s;
+  // Disable nasty "blinking" in Webkit browser
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+  // Disable text selection on double click
+  -webkit-touch-callout: none; /* iOS Safari */
 }
 
-.checked{
+.checked {
   background-color: var(--azure);
 }
 
-.knob{
-  background: var(--white);
+.knob {
   width: 0.375rem;
   height: 0.375rem;
+  background: var(--white);
 
   border-radius: 9999px;
 }
 
-.success{
+.success {
   background-color: var(--green);
 }
 
-.danger{
+.danger {
   background-color: var(--red);
 }
 
-.warning{
+.warning {
   background-color: var(--yellow);
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
   background-color: var(--gray);
 }
