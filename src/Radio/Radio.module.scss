@@ -2,7 +2,6 @@
 @import "../typography.scss";
 
 .radio {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +13,7 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-  background-color: var(--secondary);
+  background-color: var(--calcium-secondary);
   border-radius: 9999px;
 
   transition: background-color 0.15s;
@@ -27,30 +26,30 @@
 }
 
 .checked {
-  background-color: var(--azure);
+  background-color: var(--calcium-azure);
 }
 
 .knob {
   width: 0.375rem;
   height: 0.375rem;
-  background: var(--white);
+  background: var(--calcium-white);
 
   border-radius: 9999px;
 }
 
 .success {
-  background-color: var(--green);
+  background-color: var(--calcium-green);
 }
 
 .danger {
-  background-color: var(--red);
+  background-color: var(--calcium-red);
 }
 
 .warning {
-  background-color: var(--yellow);
+  background-color: var(--calcium-yellow);
 }
 
 .disabled {
   cursor: not-allowed;
-  background-color: var(--gray);
+  background-color: var(--calcium-gray);
 }

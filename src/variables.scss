@@ -1,50 +1,54 @@
 :root {
-  --background: #fafafa;
-  --foreground: #ffffff;
-  --secondary: #aaaaaa;
-  --text: #111111;
-  --control: #f0f0f0;
-  --disabled: #808080;
-  --knob: #ffffff;
-  --black: #000000;
-  --gray: #808080;
-  --white: #ffffff;
-  --blue: #0055ff;
-  --azure: #0099ff;
-  --teal: #11dddd;
-  --green: #66bb66;
-  --yellow: #ffcc66;
-  --orange: #ff9900;
-  --red: #ee4444;
-  --violet: #bb00ff;
-  --purple: #6600ff;
+  --calcium-background: #ffffff;
+  --calcium-foreground: #fafafa;
+  --calcium-secondary: #aaaaaa;
+  --calcium-text: #111111;
+  --calcium-control: #f0f0f0;
+  --calcium-disabled: #808080;
+  --calcium-knob: #ffffff;
+  --calcium-calendar-day: #555555;
+  --calcium-black: #000000;
 
-  --zDrawer: 9997;
-  --zModal: 9998;
+  --calcium-gray: #808080;
+  --calcium-white: #ffffff;
+  --calcium-blue: #0055ff;
+  --calcium-azure: #0099ff;
+  --calcium-teal: #11dddd;
+  --calcium-green: #66bb66;
+  --calcium-yellow: #ffcc66;
+  --calcium-orange: #ff9900;
+  --calcium-red: #ee4444;
+  --calcium-violet: #bb00ff;
+  --calcium-purple: #6600ff;
+
+  --calcium-zDrawer: 9997;
+  --calcium-zModal: 9998;
   --zNotifications: 9999;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #222222;
-    --foreground: #333333;
-    --secondary: #aaaaaa;
-    --text: #ffffff;
-    --control: #4d4d4d;
-    --disabled: #2b2b2b;
-    --knob: #ffffff;
-    --black: #000000;
-    --gray: #555555;
-    --white: #ffffff;
-    --blue: #3377ff;
+    --calcium-background: #222222;
+    --calcium-foreground: #333333;
+    --calcium-secondary: #aaaaaa;
+    --calcium-text: #ffffff;
+    --calcium-control: #4d4d4d;
+    --calcium-disabled: #2b2b2b;
+    --calcium-knob: #ffffff;
+    --calcium-calendar-day: #dddddd;
+
+    --calcium-black: #000000;
+    --calcium-gray: #555555;
+    --calcium-white: #ffffff;
+    --calcium-blue: #3377ff;
     //--azure: #44bbff;
-    --azure: #0099ff;
-    --teal: #66eeee;
-    --green: #99cc66;
-    --yellow: #ffcc66;
-    --orange: #ffaa44;
-    --red: #ee4444;
-    --violet: #cc44ff;
-    --purple: #8844ff;
+    --calcium-azure: #0099ff;
+    --calcium-teal: #66eeee;
+    --calcium-green: #99cc66;
+    --calcium-yellow: #ffcc66;
+    --calcium-orange: #ffaa44;
+    --calcium-red: #ee4444;
+    --calcium-violet: #cc44ff;
+    --calcium-purple: #8844ff;
   }
 }

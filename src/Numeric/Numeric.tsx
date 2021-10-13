@@ -113,9 +113,6 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           [styles.warning]: warning,
         })}
         style={style}
-        onMouseLeave={() => {
-          tickerState.current = null;
-        }}
         {...wrapperProps}
       >
         <input
@@ -128,7 +125,13 @@ const NumberComponent = React.forwardRef<HTMLInputElement, NumberProps>(
           {...rest}
           onChange={(e) => setState(e.target.value)}
         />
-        <div className={styles.tickers_container}>
+        <div
+          className={styles.tickers_container}
+          onMouseLeave={() => {
+            tickerState.current = null;
+            onChange?.(state.current);
+          }}
+        >
           <motion.button
             className={styles.ticker}
             disabled={disabled}

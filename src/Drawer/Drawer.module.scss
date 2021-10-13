@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
 
-  z-index: var(--zModal);
+  z-index: var(--calcium-zModal);
 
   display: flex;
   flex-shrink: 0;
@@ -26,5 +26,5 @@
   //noinspection CssInvalidPropertyValue
   min-height: -webkit-fill-available;
 
-  background: var(--foreground);
+  background: var(--calcium-foreground);
 }

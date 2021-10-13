@@ -1,6 +1,6 @@
 {
   "name": "clcm",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -10,12 +10,15 @@
   "description": "React component library built on Framer Motion with Typescript",
   "scripts": {
     "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "stylelint": "stylelint '**/*.{css,scss}'",
+    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "repository": {
     "type": "git",
@@ -36,7 +39,7 @@
     "url": "https://github.com/netosha/calcium/issues"
   },
   "homepage": "https://github.com/netosha/calcium#readme",
-  "peerDependencies": {
+  "dependencies": {
     "clsx": "^1.1.1",
     "framer-motion": "^4.1.17",
     "react": ">=17.0.2",

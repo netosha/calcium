@@ -4,18 +4,17 @@
 .wrapper {
   // Remove all default styles
   display: flex;
-  float: left;
   overflow: hidden;
   font-family: $font-family;
   font-size: 1rem;
-  color: var(--text);
+  color: var(--calcium-text);
 
-  background-color: var(--control);
+  background-color: var(--calcium-control);
   border-radius: 0.5rem;
   transition: box-shadow 0.12s;
 
   &:focus-within {
-    box-shadow: inset 0 0 0 2px var(--azure);
+    box-shadow: inset 0 0 0 2px var(--calcium-azure);
   }
 }
 
@@ -32,7 +31,7 @@
   cursor: inherit;
 
   background: transparent;
-  border: none;
+  border: 0 transparent;
 
   -moz-appearance: textfield;
 
@@ -67,7 +66,7 @@
   // Remove all default styles
   margin: 0;
 
-  color: var(--secondary);
+  color: var(--calcium-secondary);
 
   cursor: pointer;
   -webkit-user-select: none; /* Safari */
@@ -76,7 +75,7 @@
   user-select: none;
 
   background: none;
-  border: none;
+  border: 0 transparent;
   // Disable text selection on double click
   -webkit-touch-callout: none; /* iOS Safari */
 
@@ -90,28 +89,28 @@
 }
 
 .disabled {
-  color: var(--white);
+  color: var(--calcium-white);
   cursor: not-allowed;
-  background-color: var(--disabled);
+  background-color: var(--calcium-disabled);
 
   &::placeholder {
-    color: var(--white);
+    color: var(--calcium-white);
   }
 
   .ticker {
-    color: var(--white);
+    color: var(--calcium-white);
     cursor: not-allowed;
   }
 }
 
 .success {
-  box-shadow: inset 0 0 0 2px var(--green);
+  box-shadow: inset 0 0 0 2px var(--calcium-green);
 }
 
 .danger {
-  box-shadow: inset 0 0 0 2px var(--red);
+  box-shadow: inset 0 0 0 2px var(--calcium-red);
 }
 
 .warning {
-  box-shadow: inset 0 0 0 2px var(--yellow);
+  box-shadow: inset 0 0 0 2px var(--calcium-yellow);
 }

@@ -8,14 +8,14 @@
   font-family: $font-family;
 
   font-size: 1rem;
-  color: var(--text);
+  color: var(--calcium-text);
 
-  background-color: var(--control);
+  background-color: var(--calcium-control);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4'%3E%3Cpath d='M 0.5 0.5 L 3 3.5 L 5.5 0.5 Z' fill='gray' stroke='gray' strokeLinecap='round' strokeLinejoin='round' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position-x: calc(100% - 1rem);
   background-position-y: 50%;
-  border: none;
+  border: 0 transparent;
   border-radius: 0.5rem;
 
   transition: box-shadow 0.12s;
@@ -28,7 +28,7 @@
   }
 
   &:focus-within {
-    box-shadow: inset 0 0 0 2px var(--azure);
+    box-shadow: inset 0 0 0 2px var(--calcium-azure);
   }
 }
 
@@ -37,20 +37,20 @@
 }
 
 .success {
-  box-shadow: inset 0 0 0 2px var(--green);
+  box-shadow: inset 0 0 0 2px var(--calcium-green);
 }
 
 .danger {
-  box-shadow: inset 0 0 0 2px var(--red);
+  box-shadow: inset 0 0 0 2px var(--calcium-red);
 }
 
 .warning {
-  box-shadow: inset 0 0 0 2px var(--yellow);
+  box-shadow: inset 0 0 0 2px var(--calcium-yellow);
 }
 
 .disabled {
-  color: var(--white);
+  color: var(--calcium-white);
   cursor: not-allowed;
-  background-color: var(--disabled);
+  background-color: var(--calcium-disabled);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4'%3E%3Cpath d='M 0.5 0.5 L 3 3.5 L 5.5 0.5 Z' fill='white' stroke='white' strokeLinecap='round' strokeLinejoin='round' /%3E%3C/svg%3E");
 }
