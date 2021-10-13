@@ -1,6 +1,6 @@
 {
   "name": "clcm",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -39,7 +39,7 @@
     "url": "https://github.com/netosha/calcium/issues"
   },
   "homepage": "https://github.com/netosha/calcium#readme",
-  "dependencies": {
+  "peerDependencies": {
     "clsx": "^1.1.1",
     "framer-motion": "^4.1.17",
     "react": ">=17.0.2",
