@@ -2,67 +2,45 @@
 @import "../typography.scss";
 
 .calendar {
-
   display: flex;
   flex-direction: column;
   float: left;
   padding: 0.75rem;
   overflow: hidden;
   font-family: sans-serif;
-  background: var(--control);
+  background: var(--calcium-control);
   border-radius: 0.5rem;
 }
 
 .header {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--calcium-text);
 }
 
-.month_select {
-  padding: 0;
-  margin: 0 0.5rem 0 0;
-
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--gray);
-  text-align: left;
-  text-transform: capitalize;
+.month_button {
+  width: 100%;
+  color: var(--calcium-calendar-day);
   cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--secondary);
-  }
+  user-select: none;
 }
 
-.month_option {
-  text-transform: capitalize;
-}
-
-.year_input {
-  width: auto;
-  padding: 0;
-  margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--gray);
-  background: transparent;
-  border: none;
-  outline: none;
-
-  @media (prefers-color-scheme: dark) {
-    color: var(--secondary);
-  }
+.month_title {
+  margin: 0 0.5rem;
 }
 
 .labels {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-column-gap: 0.15rem;
+  grid-column-gap: 0.45rem;
   margin-top: 0.25rem;
 }
 
@@ -70,12 +48,12 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  color: var(--text);
+  color: var(--calcium-text);
 }
 
 .label_weekend {
   font-weight: bold;
-  color: var(--red);
+  color: var(--calcium-red);
 }
 
 .days {
@@ -84,7 +62,7 @@
   grid-row-gap: 0.15rem;
   grid-column-gap: 0.15rem;
   margin-top: 0.25rem;
-  color: var(--text);
+  color: var(--calcium-text);
 }
 
 @mixin background-opacity($color, $opacity: 0.3) {
@@ -93,13 +71,14 @@
 }
 
 .day {
-
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.2rem 0;
   line-height: 1;
+
+  color: var(--calcium-calendar-day);
   cursor: pointer;
   border-radius: 0.35rem;
 
@@ -113,11 +92,11 @@
 .current_day {
   overflow: hidden;
   font-weight: bold;
-  color: var(--white);
-  background: var(--azure);
+  color: var(--calcium-white);
+  background: var(--calcium-azure);
 
   &:hover {
-    background: var(--azure);
+    background: var(--calcium-azure);
   }
 
   .active {
@@ -132,7 +111,7 @@
   width: 4px;
   height: 4px;
 
-  background-color: var(--red);
+  background-color: var(--calcium-red);
   border-radius: 9999px;
   transition: opacity 0.2s;
 }

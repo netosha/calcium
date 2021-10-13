@@ -1,6 +1,6 @@
 {
   "name": "clcm",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -10,12 +10,15 @@
   "description": "React component library built on Framer Motion with Typescript",
   "scripts": {
     "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "stylelint": "stylelint '**/*.{css,scss}'",
+    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "repository": {
     "type": "git",

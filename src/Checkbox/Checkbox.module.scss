@@ -10,7 +10,7 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-  background-color: var(--control);
+  background-color: var(--calcium-control);
   border-radius: 25%;
   stroke: white;
 
@@ -24,22 +24,22 @@
 }
 
 .checked {
-  background: var(--azure);
+  background: var(--calcium-azure);
 }
 
 .success {
-  background-color: var(--green);
+  background-color: var(--calcium-green);
 }
 
 .danger {
-  background-color: var(--red);
+  background-color: var(--calcium-red);
 }
 
 .warning {
-  background-color: var(--yellow);
+  background-color: var(--calcium-yellow);
 }
 
 .disabled {
   cursor: not-allowed;
-  background-color: var(--disabled);
+  background-color: var(--calcium-disabled);
 }

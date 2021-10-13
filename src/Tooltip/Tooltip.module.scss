@@ -1,42 +1,42 @@
-.wrapper{
-  display: inline-block;
+.wrapper {
   position: relative;
+  display: inline-block;
 }
 
-.tooltip{
-  color: var(--text);
+.tooltip {
   position: absolute;
-  text-align: center;
   padding: 0.25rem 0.5rem;
-  background: var(--background);
+  color: var(--calcium-text);
+  text-align: center;
+  background: var(--calcium-foreground);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.08) 0 4px 8px 0;
 }
 
 .top {
-  bottom: 150%;
+  bottom: calc(100% + 1rem);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .bottom {
-  top: 150%;
+  top: calc(100% + 1rem);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .left {
   top: 50%;
-  right: 125%;
+  right: calc(100% + 1rem);
   transform: translateY(-50%);
 }
 
 .right {
   top: 50%;
-  left: 125%;
+  left: calc(100% + 1rem);
   transform: translateY(-50%);
 }
 
-.hide{
+.hide {
   display: none;
 }

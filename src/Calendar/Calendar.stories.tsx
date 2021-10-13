@@ -27,14 +27,15 @@ export const WithActiveDates = () => {
   ];
 
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <Calendar
         value={date}
         highlighted={highlightedDates}
-        locale="en"
+        locale="ru"
         onChange={(d) => setDate(d)}
       />
       {`${date?.toLocaleTimeString()} ${date?.toLocaleDateString()}`}
+      lox
     </div>
   );
 };

@@ -19,7 +19,7 @@ export const Default = () => {
       {state}
       <br />
       <Numeric
-        style={{ marginTop: '0.75rem' }}
+        style={{ marginTop: '0.75rem', maxWidth: 240 }}
         placeholder="Test number"
         value={state}
         onChange={(n) => setState(n)}

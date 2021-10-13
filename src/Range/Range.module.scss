@@ -6,7 +6,7 @@
   height: 1rem;
   margin-top: -6px;
   background: white;
-  border: none;
+  border: 0 transparent;
   border-radius: 9999px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
@@ -17,15 +17,14 @@
   cursor: pointer;
   background: linear-gradient(
     to right,
-    var(--azure) var(--progress),
-    var(--secondary) var(--progress)
+    var(--calcium-azure) var(--progress),
+    var(--calcium-secondary) var(--progress)
   );
-  border: none;
+  border: 0 transparent;
   border-radius: 0.25rem;
 }
 
 .range {
-
   height: 2rem;
   margin: 0;
 
@@ -68,24 +67,24 @@
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,
-      var(--green) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-green) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-moz-range-track {
     background: linear-gradient(
       to right,
-      var(--green) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-green) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-ms-track {
     background: linear-gradient(
       to right,
-      var(--green) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-green) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 }
@@ -94,24 +93,24 @@
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-moz-range-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-ms-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 }
@@ -120,24 +119,24 @@
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,
-      var(--red) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-red) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-moz-range-track {
     background: linear-gradient(
       to right,
-      var(--red) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-red) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-ms-track {
     background: linear-gradient(
       to right,
-      var(--red) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-red) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 }
@@ -146,24 +145,24 @@
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-moz-range-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
   &::-ms-track {
     background: linear-gradient(
       to right,
-      var(--yellow) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-yellow) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 }
@@ -175,8 +174,8 @@
     cursor: not-allowed;
     background: linear-gradient(
       to right,
-      var(--disabled) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-disabled) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
@@ -184,8 +183,8 @@
     cursor: not-allowed;
     background: linear-gradient(
       to right,
-      var(--disabled) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-disabled) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 
@@ -193,8 +192,8 @@
     cursor: not-allowed;
     background: linear-gradient(
       to right,
-      var(--disabled) var(--progress),
-      var(--secondary) var(--progress)
+      var(--calcium-disabled) var(--progress),
+      var(--calcium-secondary) var(--progress)
     );
   }
 }

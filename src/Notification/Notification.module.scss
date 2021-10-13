@@ -5,9 +5,9 @@
   padding: 0.75rem 1.25rem;
   font-family: $font-family;
   font-size: 1rem;
-  color: var(--white);
+  color: var(--calcium-white);
 
-  background-color: var(--azure);
+  background-color: var(--calcium-azure);
 
   border-radius: 0.5rem;
 }
@@ -43,13 +43,12 @@
 }
 
 .close {
-
   position: absolute;
   right: 0.75rem;
 
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--white);
+  color: var(--calcium-white);
   cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Old versions of Firefox */
@@ -60,22 +59,22 @@
 }
 
 .success {
-  background-color: var(--green);
+  background-color: var(--calcium-green);
 }
 
 .danger {
-  background-color: var(--red);
+  background-color: var(--calcium-red);
 }
 
 .warning {
-  color: var(--black);
-  background-color: var(--yellow);
+  color: var(--calcium-black);
+  background-color: var(--calcium-yellow);
 
   svg {
-    stroke: var(--black);
+    stroke: var(--calcium-black);
   }
 }
 
 .secondary {
-  background-color: var(--secondary);
+  background-color: var(--calcium-secondary);
 }
